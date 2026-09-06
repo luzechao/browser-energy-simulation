@@ -1,4 +1,4 @@
-cff-version: 1.2.0
+cff-version: 1.1.0
 message: "Please cite this research artifact and its accompanying manuscript. Add the release DOI when assigned."
 title: "Browser energy simulation: EnergyPlus v26.1 WebAssembly research artifact"
 type: software
