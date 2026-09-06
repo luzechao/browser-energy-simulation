@@ -1,0 +1,62 @@
+{
+  "standard": "ANSI/ASHRAE Standard 140-2023 as published",
+  "section": "7",
+  "annex": "A3",
+  "units": "MWh",
+  "groups": [
+    {
+      "id": "low_mass_annual",
+      "label": "Low-mass annual heating and cooling",
+      "minimum_passing": 18,
+      "tests": [
+        { "id": "600-heating", "metric": "heating", "expression": { "case": "600" }, "min": 3.75, "max": 4.98 },
+        { "id": "600-cooling", "metric": "cooling", "expression": { "case": "600" }, "min": 5.00, "max": 6.83 },
+        { "id": "610-600-heating", "metric": "heating", "expression": { "case": "610", "minus": "600" }, "min": -0.14, "max": 0.29 },
+        { "id": "610-600-cooling", "metric": "cooling", "expression": { "case": "610", "minus": "600" }, "min": -2.26, "max": -0.80 },
+        { "id": "620-600-heating", "metric": "heating", "expression": { "case": "620", "minus": "600" }, "min": -0.08, "max": 0.40 },
+        { "id": "620-600-cooling", "metric": "cooling", "expression": { "case": "620", "minus": "600" }, "min": -2.24, "max": -1.64 },
+        { "id": "630-620-heating", "metric": "heating", "expression": { "case": "630", "minus": "620" }, "min": 0.02, "max": 0.74 },
+        { "id": "630-620-cooling", "metric": "cooling", "expression": { "case": "630", "minus": "620" }, "min": -1.68, "max": -0.77 },
+        { "id": "640-600-heating", "metric": "heating", "expression": { "case": "640", "minus": "600" }, "min": -2.17, "max": -1.22 },
+        { "id": "640-600-cooling", "metric": "cooling", "expression": { "case": "640", "minus": "600" }, "min": -0.56, "max": 0.03 },
+        { "id": "650-600-cooling", "metric": "cooling", "expression": { "case": "650", "minus": "600" }, "min": -1.54, "max": -0.95 },
+        { "id": "660-600-heating", "metric": "heating", "expression": { "case": "660", "minus": "600" }, "min": -1.07, "max": -0.16 },
+        { "id": "660-600-cooling", "metric": "cooling", "expression": { "case": "660", "minus": "600" }, "min": -3.09, "max": -2.50 },
+        { "id": "670-600-heating", "metric": "heating", "expression": { "case": "670", "minus": "600" }, "min": 0.25, "max": 2.98 },
+        { "id": "670-600-cooling", "metric": "cooling", "expression": { "case": "670", "minus": "600" }, "min": 0.05, "max": 0.84 },
+        { "id": "680-600-heating", "metric": "heating", "expression": { "case": "680", "minus": "600" }, "min": -2.54, "max": -1.90 },
+        { "id": "680-600-cooling", "metric": "cooling", "expression": { "case": "680", "minus": "600" }, "min": 0.13, "max": 0.87 },
+        { "id": "685-600-heating", "metric": "heating", "expression": { "case": "685", "minus": "600" }, "min": 0.33, "max": 0.77 },
+        { "id": "685-600-cooling", "metric": "cooling", "expression": { "case": "685", "minus": "600" }, "min": 2.70, "max": 3.31 },
+        { "id": "695-685-heating", "metric": "heating", "expression": { "case": "695", "minus": "685" }, "min": -2.38, "max": -1.94 },
+        { "id": "695-685-cooling", "metric": "cooling", "expression": { "case": "695", "minus": "685" }, "min": -0.21, "max": 0.44 }
+      ]
+    },
+    {
+      "id": "high_mass_annual",
+      "label": "High-mass annual heating and cooling",
+      "minimum_passing": 17,
+      "tests": [
+        { "id": "900-heating", "metric": "heating", "expression": { "case": "900" }, "min": 1.04, "max": 2.28 },
+        { "id": "900-cooling", "metric": "cooling", "expression": { "case": "900" }, "min": 2.35, "max": 2.60 },
+        { "id": "900-910-heating", "metric": "heating", "expression": { "case": "900", "minus": "910" }, "min": -0.52, "max": -0.02 },
+        { "id": "900-910-cooling", "metric": "cooling", "expression": { "case": "900", "minus": "910" }, "min": 0.35, "max": 1.74 },
+        { "id": "920-900-heating", "metric": "heating", "expression": { "case": "920", "minus": "900" }, "min": 1.51, "max": 1.92 },
+        { "id": "920-900-cooling", "metric": "cooling", "expression": { "case": "920", "minus": "900" }, "min": 0.08, "max": 0.48 },
+        { "id": "930-920-heating", "metric": "heating", "expression": { "case": "930", "minus": "920" }, "min": 0.20, "max": 1.15 },
+        { "id": "930-920-cooling", "metric": "cooling", "expression": { "case": "930", "minus": "920" }, "min": -1.19, "max": -0.44 },
+        { "id": "940-900-heating", "metric": "heating", "expression": { "case": "940", "minus": "900" }, "min": -0.82, "max": -0.37 },
+        { "id": "940-900-cooling", "metric": "cooling", "expression": { "case": "940", "minus": "900" }, "min": -0.19, "max": 0.06 },
+        { "id": "950-900-cooling", "metric": "cooling", "expression": { "case": "950", "minus": "900" }, "min": -2.00, "max": -1.56 },
+        { "id": "960-900-heating", "metric": "heating", "expression": { "case": "960", "minus": "900" }, "min": 0.96, "max": 1.12 },
+        { "id": "960-900-cooling", "metric": "cooling", "expression": { "case": "960", "minus": "900" }, "min": -1.81, "max": -1.27 },
+        { "id": "980-900-heating", "metric": "heating", "expression": { "case": "980", "minus": "900" }, "min": -1.65, "max": -1.00 },
+        { "id": "980-900-cooling", "metric": "cooling", "expression": { "case": "980", "minus": "900" }, "min": 1.09, "max": 1.41 },
+        { "id": "985-900-heating", "metric": "heating", "expression": { "case": "985", "minus": "900" }, "min": 0.64, "max": 0.81 },
+        { "id": "985-900-cooling", "metric": "cooling", "expression": { "case": "985", "minus": "900" }, "min": 3.52, "max": 4.18 },
+        { "id": "995-985-heating", "metric": "heating", "expression": { "case": "995", "minus": "985" }, "min": -1.83, "max": -1.07 },
+        { "id": "995-985-cooling", "metric": "cooling", "expression": { "case": "995", "minus": "985" }, "min": 0.63, "max": 1.15 }
+      ]
+    }
+  ]
+}

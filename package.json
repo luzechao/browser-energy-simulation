@@ -1,0 +1,9 @@
+{
+  "name": "browser-energy-simulation-research",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Reproduction and figure tools for the EnergyPlus v26.1 WASM manuscript",
+  "devDependencies": {
+    "playwright": "1.61.1"
+  }
+}

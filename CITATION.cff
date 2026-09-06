@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "Please cite this research artifact and its accompanying manuscript. Add the release DOI when assigned."
+title: "Browser energy simulation: EnergyPlus v26.1 WebAssembly research artifact"
+type: software
+authors:
+  - family-names: Mashaly
+    given-names: Islam
+    orcid: "https://orcid.org/0000-0002-4021-4308"
+    affiliation: "Department of Architecture, The American University in Cairo"
+abstract: "Build patches, validation cases and captured results for a browser WebAssembly port of EnergyPlus v26.1.0."
+keywords:
+  - EnergyPlus
+  - WebAssembly
+  - building energy simulation
+  - ASHRAE Standard 140
+# Add repository-code, version, date-released, doi and license after the actual release decisions.

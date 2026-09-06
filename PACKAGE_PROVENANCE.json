@@ -1,0 +1,572 @@
+{
+  "assembled": "2026-09-06",
+  "parent_commit": "7adf7ef94dd9bd3c4160a45ca8b7576cc906849a",
+  "note": "Curated working-tree snapshot, not a tagged release. Entries record input hashes before documented portability changes. Final content is hashed in MANIFEST.sha256.",
+  "files": [
+    {
+      "source": "BUILD_PROVENANCE.md",
+      "path": "BUILD_PROVENANCE.md",
+      "source_sha256": "3e13569451035b6782c882025e64e21b6431cecfa1d53c3e16e25f1680884c1e"
+    },
+    {
+      "source": "scripts/configure-ep-native.sh",
+      "path": "scripts/configure-ep-native.sh",
+      "source_sha256": "629428c4d20f784212334dc7e63254ff52d33a3d3ccbe429b28cdc5de2d7f67f"
+    },
+    {
+      "source": "scripts/configure-ep-wasm.sh",
+      "path": "scripts/configure-ep-wasm.sh",
+      "source_sha256": "040a04114be61000dcbece90131831c094ae0531514b2e3613c0732bd19dc2d6"
+    },
+    {
+      "source": "test/ep_1zone_gate.mjs",
+      "path": "test/ep_1zone_gate.mjs",
+      "source_sha256": "a213e1497d6357ac82cdfb2a009ac58e56d850ac17633bb391f2da2f3bdf14dc"
+    },
+    {
+      "source": "test/ep_5zone_gate.mjs",
+      "path": "test/ep_5zone_gate.mjs",
+      "source_sha256": "a0af5dfe5beea2f57012e16c5ae32c730dda1bf4288e963ca24eed15a7e84ace"
+    },
+    {
+      "source": "test/ep_kiva_gate.mjs",
+      "path": "test/ep_kiva_gate.mjs",
+      "source_sha256": "ffaefa7512927ad045ac60bb34d5a2e5d9bbb7705165ba493b5f8ff7a36c22b6"
+    },
+    {
+      "source": "test/ep_ashrae140_2023_gate.mjs",
+      "path": "test/ep_ashrae140_2023_gate.mjs",
+      "source_sha256": "e55394f286dd01ab115e430b17e47b373d45b577df290127b747721643895e47"
+    },
+    {
+      "source": "test/lib/ep_gate_common.mjs",
+      "path": "test/lib/ep_gate_common.mjs",
+      "source_sha256": "0a1e28a38289e1027f6eab63471a1f27f0f131b5f950a33b8baef164f8c26ab5"
+    },
+    {
+      "source": "src/browser-energy-worker.mjs",
+      "path": "src/browser-energy-worker.mjs",
+      "source_sha256": "92d957cb058bc991cd823129322dd5dde7637e0b8c39d3acd1d87d5d0be3fcc5"
+    },
+    {
+      "source": "src/ep-results.mjs",
+      "path": "src/ep-results.mjs",
+      "source_sha256": "78073ea02eebca21d9718f457036f2e4f7e5febd8f1459ae1c5650eaa835a0fd"
+    },
+    {
+      "source": "patches/energyplus/0001-cstdint-include-lib_battery_dispatch.patch",
+      "path": "patches/energyplus/0001-cstdint-include-lib_battery_dispatch.patch",
+      "source_sha256": "1483bd1432389be01cd3000df7b1d245c4f194929d435eaf683aa00027368d11"
+    },
+    {
+      "source": "patches/energyplus/0002-fmt8-udl-format-h.patch",
+      "path": "patches/energyplus/0002-fmt8-udl-format-h.patch",
+      "source_sha256": "6d25be9856d79f203f896b14f98bb24a00a83c0dbd3d88c851eac59a5e8b4d15"
+    },
+    {
+      "source": "patches/energyplus/0003-fmt8-udl-xchar-h.patch",
+      "path": "patches/energyplus/0003-fmt8-udl-xchar-h.patch",
+      "source_sha256": "27dd37c983f53ebb144e402760bf6a11379e56ac9f462e8529e202c2791a82ad"
+    },
+    {
+      "source": "patches/energyplus/0004-fmt8-consteval-clang15.patch",
+      "path": "patches/energyplus/0004-fmt8-consteval-clang15.patch",
+      "source_sha256": "12ff411195e4f08d06cf968bd7e8671babce1e676b9d0dfeb3642435a4636633"
+    },
+    {
+      "source": "patches/energyplus/0005-cmake-werror-and-idd-emscripten-linkflags.patch",
+      "path": "patches/energyplus/0005-cmake-werror-and-idd-emscripten-linkflags.patch",
+      "source_sha256": "5605052280915efc3dbd083443f1cb457d537f6c0bc43f5b54c2b410048d190b"
+    },
+    {
+      "source": "patches/energyplus/README.md",
+      "path": "patches/energyplus/README.md",
+      "source_sha256": "fb509a7b04b90e3c29b13a46f7d6af10d01f4128eaf839d2a3c7ce7b758d363c"
+    },
+    {
+      "source": "test/ep-reference/ashrae140-2023/PROVENANCE.md",
+      "path": "test/ep-reference/ashrae140-2023/PROVENANCE.md",
+      "source_sha256": "3fe7bd158653b832ca253b741f583c98069afbee8543afd58f502c1ec0308940"
+    },
+    {
+      "source": "test/ep-reference/ashrae140-2023/UPSTREAM_LICENSE.md",
+      "path": "test/ep-reference/ashrae140-2023/UPSTREAM_LICENSE.md",
+      "source_sha256": "fc712d0a0ac1c348f3cb297a9746763e4f6e07f8073e447ceb748f280922902e"
+    },
+    {
+      "source": "test/ep-reference/ashrae140-2023/ashrae140_2023_ranges.json",
+      "path": "test/ep-reference/ashrae140-2023/ashrae140_2023_ranges.json",
+      "source_sha256": "95cf0416fb79392b22f91886e2bed056b4e26d2849c5ce4d05d80e0ab9e0b637"
+    },
+    {
+      "source": "test/ep-reference/ashrae140-2023/case600.idf",
+      "path": "test/ep-reference/ashrae140-2023/case600.idf",
+      "source_sha256": "c49ac91f15d686a8a7118368f62d2f87f3db2e2f4ba67129090c664e86b2c9c8"
+    },
+    {
+      "source": "test/ep-reference/ashrae140-2023/case610.idf",
+      "path": "test/ep-reference/ashrae140-2023/case610.idf",
+      "source_sha256": "5551d2735665913c75dc00ab6a2c5dbac99af1347d7bd352bbb5a6f3807c3d88"
+    },
+    {
+      "source": "test/ep-reference/ashrae140-2023/case620.idf",
+      "path": "test/ep-reference/ashrae140-2023/case620.idf",
+      "source_sha256": "479931dfcff3af37e7d7d0e154265655b2ec7b05e33fbfe26c9cf9afe11b1188"
+    },
+    {
+      "source": "test/ep-reference/ashrae140-2023/case630.idf",
+      "path": "test/ep-reference/ashrae140-2023/case630.idf",
+      "source_sha256": "92151a721e1b90edf22c04b0659e1b42511f3c02bc944930ad3eaf61ba9f1294"
+    },
+    {
+      "source": "test/ep-reference/ashrae140-2023/case640.idf",
+      "path": "test/ep-reference/ashrae140-2023/case640.idf",
+      "source_sha256": "500943410ce6d268f69079784c4d24e6f27b48a487defcf6d2d151cd62fa6e98"
+    },
+    {
+      "source": "test/ep-reference/ashrae140-2023/case650.idf",
+      "path": "test/ep-reference/ashrae140-2023/case650.idf",
+      "source_sha256": "a61fb5ad9148fd21520dfcb8eb4712d4ffc54b1f195923ae28e6e2d3d841b40e"
+    },
+    {
+      "source": "test/ep-reference/ashrae140-2023/case660.idf",
+      "path": "test/ep-reference/ashrae140-2023/case660.idf",
+      "source_sha256": "1171ee1c72692aa753dbcd87e109e402b5f1c458471bdd9f548f38a4c6ca33e0"
+    },
+    {
+      "source": "test/ep-reference/ashrae140-2023/case670.idf",
+      "path": "test/ep-reference/ashrae140-2023/case670.idf",
+      "source_sha256": "f21fb4abb8f11cbb59ae6dde4f84a6776fb0fad2c09cf5ef59a90d85ba255bdf"
+    },
+    {
+      "source": "test/ep-reference/ashrae140-2023/case680.idf",
+      "path": "test/ep-reference/ashrae140-2023/case680.idf",
+      "source_sha256": "dc5f7b573481fcd7c76a775d7fa9a418bff284bac87deea8e64d120a6e03b147"
+    },
+    {
+      "source": "test/ep-reference/ashrae140-2023/case685.idf",
+      "path": "test/ep-reference/ashrae140-2023/case685.idf",
+      "source_sha256": "8c2638a78983fd0161bd51561197d23947837c947f6875d5c77c5c0d7ad9cb56"
+    },
+    {
+      "source": "test/ep-reference/ashrae140-2023/case695.idf",
+      "path": "test/ep-reference/ashrae140-2023/case695.idf",
+      "source_sha256": "290173c0291029a56a716c5048f94bb1ca3b60945018641adedbd2b184daa8a0"
+    },
+    {
+      "source": "test/ep-reference/ashrae140-2023/case900.idf",
+      "path": "test/ep-reference/ashrae140-2023/case900.idf",
+      "source_sha256": "10ecc6e07fb44cae49579a3ee926a9d42a4681e84d70ded8ead86b5e01170394"
+    },
+    {
+      "source": "test/ep-reference/ashrae140-2023/case910.idf",
+      "path": "test/ep-reference/ashrae140-2023/case910.idf",
+      "source_sha256": "a2ef415f829771882a3f32cd692eb08e82ef6fa38785dc0cdf422b005de10861"
+    },
+    {
+      "source": "test/ep-reference/ashrae140-2023/case920.idf",
+      "path": "test/ep-reference/ashrae140-2023/case920.idf",
+      "source_sha256": "3f97e4aa15f6a35706fea86507b739fffbfab704012c9f1761bd33697f5524e9"
+    },
+    {
+      "source": "test/ep-reference/ashrae140-2023/case930.idf",
+      "path": "test/ep-reference/ashrae140-2023/case930.idf",
+      "source_sha256": "d2bf06f86752d262708a74f4cee1cc815794f212dbdc245a9c0980c1224b3d6c"
+    },
+    {
+      "source": "test/ep-reference/ashrae140-2023/case940.idf",
+      "path": "test/ep-reference/ashrae140-2023/case940.idf",
+      "source_sha256": "089c3731cad98dfa2aea3df87f9ef22c9bc5b5e4345153713358409bf116d201"
+    },
+    {
+      "source": "test/ep-reference/ashrae140-2023/case950.idf",
+      "path": "test/ep-reference/ashrae140-2023/case950.idf",
+      "source_sha256": "27b506152487497c6456e737eb99b8ccce2a9bfee21f511494d1f0b02f444d7a"
+    },
+    {
+      "source": "test/ep-reference/ashrae140-2023/case960.idf",
+      "path": "test/ep-reference/ashrae140-2023/case960.idf",
+      "source_sha256": "dfb2d4cfd73e02cbf72883214222ab543413031ada72a0e8262fbec6f15cfb3c"
+    },
+    {
+      "source": "test/ep-reference/ashrae140-2023/case980.idf",
+      "path": "test/ep-reference/ashrae140-2023/case980.idf",
+      "source_sha256": "8b9d6edd561ed728494ce2fa1829f19f6b483a2da325552735f98bbc1bf61da4"
+    },
+    {
+      "source": "test/ep-reference/ashrae140-2023/case985.idf",
+      "path": "test/ep-reference/ashrae140-2023/case985.idf",
+      "source_sha256": "2a6b47e9d95c4c3b0da271d725563a14faafacb92dd132be4690f9a2f1e9c310"
+    },
+    {
+      "source": "test/ep-reference/ashrae140-2023/case995.idf",
+      "path": "test/ep-reference/ashrae140-2023/case995.idf",
+      "source_sha256": "e057edc9555d0d0b95166e7b353081b93f7d1178d014b51d075f9f207dc46324"
+    },
+    {
+      "source": "test/ep-reference/ashrae140-2023/derive_cases.mjs",
+      "path": "test/ep-reference/ashrae140-2023/derive_cases.mjs",
+      "source_sha256": "166850503491d2576bd27030558ea3fd70bf8396630b777ec5e43c568d051ddd"
+    },
+    {
+      "source": "test/ep-reference/ashrae140/725650TYCST.epw",
+      "path": "test/ep-reference/ashrae140/725650TYCST.epw",
+      "source_sha256": "1d0402144460a26265555a18a9cdfe4f0f7d9b4f57d6194847af7959b518571f"
+    },
+    {
+      "source": "test/ep-reference/ashrae140/PROVENANCE.md",
+      "path": "test/ep-reference/ashrae140/PROVENANCE.md",
+      "source_sha256": "58cb7cc2a706cd385e85389e9c3a03402b69a4f0422bef5d3926e66982ca6e2e"
+    },
+    {
+      "source": "test/ep-reference/ashrae140/ashrae140_ranges.json",
+      "path": "test/ep-reference/ashrae140/ashrae140_ranges.json",
+      "source_sha256": "98898925ef016b76f0d3276d750a324eb7974afc3d7994290770f745ef081f9c"
+    },
+    {
+      "source": "test/ep-reference/ashrae140/case600.idf",
+      "path": "test/ep-reference/ashrae140/case600.idf",
+      "source_sha256": "3789afc05fdc94483beb7e103acb93d4b6b03b165f15ef3eca9cf716823077e2"
+    },
+    {
+      "source": "test/ep-reference/ashrae140/case610.idf",
+      "path": "test/ep-reference/ashrae140/case610.idf",
+      "source_sha256": "79f6ffc02e90394865655e8b801aef4911872f71d8efff900d6d3db3e07f5133"
+    },
+    {
+      "source": "test/ep-reference/ashrae140/case620.idf",
+      "path": "test/ep-reference/ashrae140/case620.idf",
+      "source_sha256": "fd907851a92cf832b1a2c4478ebc73980066122e037904297dc2a4e8c369b02a"
+    },
+    {
+      "source": "test/ep-reference/ashrae140/case640.idf",
+      "path": "test/ep-reference/ashrae140/case640.idf",
+      "source_sha256": "7051db542f5772c11e84dcefb957658fb5cedd7d5ad69440a4f48738dc3b5256"
+    },
+    {
+      "source": "test/ep-reference/ashrae140/case900.idf",
+      "path": "test/ep-reference/ashrae140/case900.idf",
+      "source_sha256": "072f37fa8eb2061d087f9a6781021720c7f73d7bf45595860860d8be10d6105d"
+    },
+    {
+      "source": "test/ep-reference/ashrae140/case940.idf",
+      "path": "test/ep-reference/ashrae140/case940.idf",
+      "source_sha256": "0844234092e56ec19da33258bcf873ec3407cf853e64758bb16ef3b45216ec5e"
+    },
+    {
+      "source": "test/ep-reference/ashrae140/case_en_600.orig.idf",
+      "path": "test/ep-reference/ashrae140/case_en_600.orig.idf",
+      "source_sha256": "8e288535c5eb05fe5923967c56b3fcb4127b43882914b3497f6e7151f7652c44"
+    },
+    {
+      "source": "test/ep-reference/ashrae140/derive_cases.mjs",
+      "path": "test/ep-reference/ashrae140/derive_cases.mjs",
+      "source_sha256": "36da206c12ca8d4ac8d2f43592c104557d003dcfc477bb429956ce0fdfbf06bb"
+    },
+    {
+      "source": "paper1/data/ashrae140_2023_results.json",
+      "path": "paper1/data/ashrae140_2023_results.json",
+      "source_sha256": "0c01287582d13fe78ebd30ffcd50e313b4500c1dd7af8b7fbbf0cd56e2a40310"
+    },
+    {
+      "source": "paper1/data/ashrae140_run.txt",
+      "path": "paper1/data/ashrae140_run.txt",
+      "source_sha256": "b815cc286c6cb5588b6dad6edf3f426fd0661bee822e2e61a2ece5157b5e9c1a"
+    },
+    {
+      "source": "paper1/data/chromium_timing_reps.txt",
+      "path": "paper1/data/chromium_timing_reps.txt",
+      "source_sha256": "0eb586ce881c11aca93f7565eb165a6d0f6dd93aafb8bd106cc2b4c6baf5c962"
+    },
+    {
+      "source": "paper1/data/env_studio_energy_run.txt",
+      "path": "paper1/data/env_studio_energy_run.txt",
+      "source_sha256": "2227f6ddec9ab67a866791d3db22af2a6a0471ea2d2bd37c1094e35e5e25b402"
+    },
+    {
+      "source": "paper1/data/run_timings.sh",
+      "path": "paper1/data/run_timings.sh",
+      "source_sha256": "ce7c3ed7a0dfc3e6cd3355d4dcbfc82fbf16a3ae01debc645f9a9dc972595009"
+    },
+    {
+      "source": "paper1/data/runtime_reps.csv",
+      "path": "paper1/data/runtime_reps.csv",
+      "source_sha256": "fb531500d51c6a9d1559510c5120ef95d9e8683fc6600b581d48f18d41a1c91d"
+    },
+    {
+      "source": "paper1/data/runtime_summary.md",
+      "path": "paper1/data/runtime_summary.md",
+      "source_sha256": "0b0485c72ac79ae8cbe8474d873bd6b81fd04879e7e424bc79ee2658e986a58f"
+    },
+    {
+      "source": "paper1/data/self_agreement_rerun.txt",
+      "path": "paper1/data/self_agreement_rerun.txt",
+      "source_sha256": "3c4345d56b220ee4ba0c0747fb97629d799ad061d55461be03424e9f6dfd7176"
+    },
+    {
+      "source": "paper1/data/summarize_timings.mjs",
+      "path": "paper1/data/summarize_timings.mjs",
+      "source_sha256": "3daa92f1d36c11553322a707240df6cbca882716aa54eb979890f9d3471b26d8"
+    },
+    {
+      "source": "paper1/data/time_one.mjs",
+      "path": "paper1/data/time_one.mjs",
+      "source_sha256": "09d976aae6b973743c704f3728c6f0e2faff15763a341ffee1e6285e5123a2e4"
+    },
+    {
+      "source": "paper1/figures/fig1_ashrae140.png",
+      "path": "paper1/figures/fig1_ashrae140.png",
+      "source_sha256": "e91c182a6ada6b52a8aff0e183af473a0675b401328106e76ed4d8639412fa2a"
+    },
+    {
+      "source": "paper1/figures/fig1_ashrae140.svg",
+      "path": "paper1/figures/fig1_ashrae140.svg",
+      "source_sha256": "03558fae15e6b035c9b9dd50316910547afe2720596e68712b787ddbaccf282a"
+    },
+    {
+      "source": "paper1/figures/fig1_caption.md",
+      "path": "paper1/figures/fig1_caption.md",
+      "source_sha256": "603b935c09e169d8988f197e94264f7f1129155c2ca451d6a98b8320e30190e5"
+    },
+    {
+      "source": "paper1/figures/make_fig1.mjs",
+      "path": "paper1/figures/make_fig1.mjs",
+      "source_sha256": "7cc0fe6b62be2c811d9f87dd6a98f642fb89302940ac57f330b4989aece09118"
+    },
+    {
+      "source": "energyplus-src/testfiles/1ZoneUncontrolled.idf",
+      "path": "energyplus-src/testfiles/1ZoneUncontrolled.idf",
+      "source_sha256": "55cf8204d8c19e317e3088d192f9b421b57629983039ec3dca5bd71d344e9a79"
+    },
+    {
+      "source": "energyplus-src/testfiles/5ZoneAirCooled.idf",
+      "path": "energyplus-src/testfiles/5ZoneAirCooled.idf",
+      "source_sha256": "462d6e31052c19e1c5e3be1ac4e101954d5b710555a2648d159b1ccef5c3dd0c"
+    },
+    {
+      "source": "energyplus-src/testfiles/ZoneCoupledKivaSlab.idf",
+      "path": "energyplus-src/testfiles/ZoneCoupledKivaSlab.idf",
+      "source_sha256": "4abaaac26045428412076f8126482f9fcf13c31cf4a8986187756fb1a59bf5bb"
+    },
+    {
+      "source": "energyplus-src/weather/USA_IL_Chicago-OHare.Intl.AP.725300_TMY3.epw",
+      "path": "energyplus-src/weather/USA_IL_Chicago-OHare.Intl.AP.725300_TMY3.epw",
+      "source_sha256": "3cc3dc0c7bcc93e7203e8d9aab657d384315f5a0c86cdede23f792d437a0309f"
+    },
+    {
+      "source": "energyplus-src/LICENSE.txt",
+      "path": "LICENSES/EnergyPlus.txt",
+      "source_sha256": "6056c62430939d292fe52a0a7e1cf037d30b110ddb58fe4d51397531d187d653"
+    },
+    {
+      "source": "test/ep-reference/ashrae140-2023/UPSTREAM_LICENSE.md",
+      "path": "LICENSES/BESTEST-GSR.md",
+      "source_sha256": "fc712d0a0ac1c348f3cb297a9746763e4f6e07f8073e447ceb748f280922902e"
+    },
+    {
+      "source": "paper1/exports/figure1-workflow-corrected-2026-09-06.png",
+      "path": "paper1/figures/figure1_workflow.png",
+      "source_sha256": "b509e24197f313467dcb2c6a64b4d8eb4d7401c835105a4dadd13b19b61e2b56"
+    },
+    {
+      "source": "energyplus-src/third_party/CLI/LICENSE",
+      "path": "LICENSES/third_party/CLI/LICENSE",
+      "source_sha256": "4110754959bd99e0ebc34001ed0402ff5f371364e83f9db6d1e230d02368984f"
+    },
+    {
+      "source": "energyplus-src/third_party/EP-Launch-Lite/LICENSE.txt",
+      "path": "LICENSES/third_party/EP-Launch-Lite/LICENSE.txt",
+      "source_sha256": "f36251a3dbd143e922fb27b414faf866168aa81394de201ec28114535f7abe03"
+    },
+    {
+      "source": "energyplus-src/third_party/Expat/COPYING",
+      "path": "LICENSES/third_party/Expat/COPYING",
+      "source_sha256": "f6eeb2310d0b00e5cecac39c73a0696a5bdbfb754b26325ed5a502fc1a6c338c"
+    },
+    {
+      "source": "energyplus-src/third_party/FMI/Copyright/expat_copying.txt",
+      "path": "LICENSES/third_party/FMI/Copyright/expat_copying.txt",
+      "source_sha256": "df5fc601ab7efaaca2ae444eda484cfb38a1e53dd291ef058bc96e03c3c6d5f6"
+    },
+    {
+      "source": "energyplus-src/third_party/FMUParser/Copyright/expat_copying.txt",
+      "path": "LICENSES/third_party/FMUParser/Copyright/expat_copying.txt",
+      "source_sha256": "df5fc601ab7efaaca2ae444eda484cfb38a1e53dd291ef058bc96e03c3c6d5f6"
+    },
+    {
+      "source": "energyplus-src/third_party/ObjexxFCL/ObjexxFCL.License.EnergyPlus.txt",
+      "path": "LICENSES/third_party/ObjexxFCL/ObjexxFCL.License.EnergyPlus.txt",
+      "source_sha256": "a266b14ff9e18ea5fec25c258c39f2d9bf4c92c4a7a380ba5c5ae5d6457a21e5"
+    },
+    {
+      "source": "energyplus-src/third_party/ObjexxFCL/ObjexxFCL.License.txt",
+      "path": "LICENSES/third_party/ObjexxFCL/ObjexxFCL.License.txt",
+      "source_sha256": "b2dcff5cab09bbb92d2275b0847899ac62d4f59f9a55dfed834fbc4adca83470"
+    },
+    {
+      "source": "energyplus-src/third_party/ObjexxFCL/doc/ObjexxFCL.License.EnergyPlus.txt",
+      "path": "LICENSES/third_party/ObjexxFCL/doc/ObjexxFCL.License.EnergyPlus.txt",
+      "source_sha256": "a266b14ff9e18ea5fec25c258c39f2d9bf4c92c4a7a380ba5c5ae5d6457a21e5"
+    },
+    {
+      "source": "energyplus-src/third_party/ObjexxFCL/doc/ObjexxFCL.License.txt",
+      "path": "LICENSES/third_party/ObjexxFCL/doc/ObjexxFCL.License.txt",
+      "source_sha256": "b2dcff5cab09bbb92d2275b0847899ac62d4f59f9a55dfed834fbc4adca83470"
+    },
+    {
+      "source": "energyplus-src/third_party/btwxt/LICENSE",
+      "path": "LICENSES/third_party/btwxt/LICENSE",
+      "source_sha256": "e5a920b62f0554c5ba1acb42ae7cbcb00329d26a61d2e4d17341c82ff2d584ee"
+    },
+    {
+      "source": "energyplus-src/third_party/btwxt/vendor/courierr/LICENSE.txt",
+      "path": "LICENSES/third_party/btwxt/vendor/courierr/LICENSE.txt",
+      "source_sha256": "02923c8f68a73725bc1479dd45da62e1f1b33c90773f635304d37a75f39d3f17"
+    },
+    {
+      "source": "energyplus-src/third_party/eigen/COPYING.BSD",
+      "path": "LICENSES/third_party/eigen/COPYING.BSD",
+      "source_sha256": "4f877e5ae4672568ef82cfd0023e2cef4a7cf55d867ab249efc9569a7eb9e5b1"
+    },
+    {
+      "source": "energyplus-src/third_party/eigen/COPYING.GPL",
+      "path": "LICENSES/third_party/eigen/COPYING.GPL",
+      "source_sha256": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903"
+    },
+    {
+      "source": "energyplus-src/third_party/eigen/COPYING.LGPL",
+      "path": "LICENSES/third_party/eigen/COPYING.LGPL",
+      "source_sha256": "dc626520dcd53a22f727af3ee42c770e56c97a64fe3adb063799d8ab032fe551"
+    },
+    {
+      "source": "energyplus-src/third_party/eigen/COPYING.MINPACK",
+      "path": "LICENSES/third_party/eigen/COPYING.MINPACK",
+      "source_sha256": "8887036b1039e299ebcc8b95a73ea1538df548393fb8462361c80bea605a4fbe"
+    },
+    {
+      "source": "energyplus-src/third_party/eigen/COPYING.MPL2",
+      "path": "LICENSES/third_party/eigen/COPYING.MPL2",
+      "source_sha256": "fab3dd6bdab226f1c08630b1dd917e11fcb4ec5e1e020e2c16f83a0a13863e85"
+    },
+    {
+      "source": "energyplus-src/third_party/eigen/COPYING.README",
+      "path": "LICENSES/third_party/eigen/COPYING.README",
+      "source_sha256": "c83230b770f17ef1386ea1fd3681271dd98aa93646bdbfb5bff3a1b7050fff9d"
+    },
+    {
+      "source": "energyplus-src/third_party/eigen/bench/btl/COPYING",
+      "path": "LICENSES/third_party/eigen/bench/btl/COPYING",
+      "source_sha256": "b8d0e2bcbf36f6af3cdbf94055ad2ea675d5a19fc623eb0ec82febb2b08e719b"
+    },
+    {
+      "source": "energyplus-src/third_party/eigen/scripts/relicense.py",
+      "path": "LICENSES/third_party/eigen/scripts/relicense.py",
+      "source_sha256": "644d4ae0d2f4f41ee9b018793fd6c0f5abc8a138149ac4c82feccc8548e18edb"
+    },
+    {
+      "source": "energyplus-src/third_party/eigen/unsupported/Eigen/src/LevenbergMarquardt/CopyrightMINPACK.txt",
+      "path": "LICENSES/third_party/eigen/unsupported/Eigen/src/LevenbergMarquardt/CopyrightMINPACK.txt",
+      "source_sha256": "8887036b1039e299ebcc8b95a73ea1538df548393fb8462361c80bea605a4fbe"
+    },
+    {
+      "source": "energyplus-src/third_party/fmt-8.0.1/LICENSE.rst",
+      "path": "LICENSES/third_party/fmt-8.0.1/LICENSE.rst",
+      "source_sha256": "825c9324e70f8c839c8ba910543dd4a7daee243b86ef960594c11381a19980b8"
+    },
+    {
+      "source": "energyplus-src/third_party/fmt-8.0.1/doc/python-license.txt",
+      "path": "LICENSES/third_party/fmt-8.0.1/doc/python-license.txt",
+      "source_sha256": "dcc4d9738d3e8d3b9f51286f1dc90d0c49ea8325982008ced021932a0b0b0cda"
+    },
+    {
+      "source": "energyplus-src/third_party/gtest/LICENSE",
+      "path": "LICENSES/third_party/gtest/LICENSE",
+      "source_sha256": "9702de7e4117a8e2b20dafab11ffda58c198aede066406496bef670d40a22138"
+    },
+    {
+      "source": "energyplus-src/third_party/gtest/googlemock/scripts/generator/LICENSE",
+      "path": "LICENSES/third_party/gtest/googlemock/scripts/generator/LICENSE",
+      "source_sha256": "5e0df8c845c742e76f2f64d2d9ce1b7e74a2422fddbc577ae6a56319083de0bf"
+    },
+    {
+      "source": "energyplus-src/third_party/kiva/LICENSE",
+      "path": "LICENSES/third_party/kiva/LICENSE",
+      "source_sha256": "5e877108285a35c4742eb8fee4366f33be97d6b3384f84bd98f4a3a5bb8fd021"
+    },
+    {
+      "source": "energyplus-src/third_party/kiva/cmake/LICENSE",
+      "path": "LICENSES/third_party/kiva/cmake/LICENSE",
+      "source_sha256": "1ca90492eb783f9d74660d01121039ba22ac772e8ffb34ad16ca5786ee41e70c"
+    },
+    {
+      "source": "energyplus-src/third_party/kiva/vendor/boost-1.88.0/LICENSE_1_0.txt",
+      "path": "LICENSES/third_party/kiva/vendor/boost-1.88.0/LICENSE_1_0.txt",
+      "source_sha256": "c9bff75738922193e67fa726fa225535870d2aa1059f91452c411736284ad566"
+    },
+    {
+      "source": "energyplus-src/third_party/libtk205/LICENSE.txt",
+      "path": "LICENSES/third_party/libtk205/LICENSE.txt",
+      "source_sha256": "13ede7375be7afcb44b69d44da9cdace2b60d97d8dd40acf86015a3c804aee3c"
+    },
+    {
+      "source": "energyplus-src/third_party/libtk205/vendor/json/LICENSE.MIT",
+      "path": "LICENSES/third_party/libtk205/vendor/json/LICENSE.MIT",
+      "source_sha256": "c983d69523377819db3c377b390d5644f5ec53bec9b7c4a0f1ed893bb743d045"
+    },
+    {
+      "source": "energyplus-src/third_party/penumbra/LICENSE.txt",
+      "path": "LICENSES/third_party/penumbra/LICENSE.txt",
+      "source_sha256": "0335af247fad2103b52f61b79c0fefecd55f2b260aa59a9016b48a4e1a1e617f"
+    },
+    {
+      "source": "energyplus-src/third_party/penumbra/vendor/courierr/LICENSE.txt",
+      "path": "LICENSES/third_party/penumbra/vendor/courierr/LICENSE.txt",
+      "source_sha256": "02923c8f68a73725bc1479dd45da62e1f1b33c90773f635304d37a75f39d3f17"
+    },
+    {
+      "source": "energyplus-src/third_party/penumbra/vendor/glfw/LICENSE.md",
+      "path": "LICENSES/third_party/penumbra/vendor/glfw/LICENSE.md",
+      "source_sha256": "149704059b5d0bf551637e50042dd4de9c2cae921021f6636298911e3a5f9462"
+    },
+    {
+      "source": "energyplus-src/third_party/penumbra/vendor/libtess2/LICENSE.txt",
+      "path": "LICENSES/third_party/penumbra/vendor/libtess2/LICENSE.txt",
+      "source_sha256": "582c43ef2eb5aba92c6fb92913194a966989ffb044aef5dee0e37590029a86a5"
+    },
+    {
+      "source": "energyplus-src/third_party/re2/LICENSE",
+      "path": "LICENSES/third_party/re2/LICENSE",
+      "source_sha256": "6040cda75d90b1738292a631d89934c411ef7ffd543c4d6a1b7edfc8edf29449"
+    },
+    {
+      "source": "energyplus-src/third_party/re2/re2/fuzzing/compiler-rt/LICENSE",
+      "path": "LICENSES/third_party/re2/re2/fuzzing/compiler-rt/LICENSE",
+      "source_sha256": "f72b120d1385408e9e380acc020756eb6ba1b461d66c328ea67327ba08d7dcfd"
+    },
+    {
+      "source": "energyplus-src/third_party/ssc/LICENSE",
+      "path": "LICENSES/third_party/ssc/LICENSE",
+      "source_sha256": "97d6e9413cc269ff41171f4639dad07b1fca4a6073c550efe989423b03214a62"
+    },
+    {
+      "source": "energyplus-src/third_party/ssc/jsoncpp/LICENSE",
+      "path": "LICENSES/third_party/ssc/jsoncpp/LICENSE",
+      "source_sha256": "95039d77a20e75b428207740d9a8f97b2dce3c89da4b21f1ad862b5997160e0a"
+    },
+    {
+      "source": "energyplus-src/third_party/ssc/lpsolve/LICENSE.htm",
+      "path": "LICENSES/third_party/ssc/lpsolve/LICENSE.htm",
+      "source_sha256": "78cd5fd2247e79f1386f12f6c32770df40fd88004acc630c5f3029420a23a09a"
+    },
+    {
+      "source": "energyplus-src/third_party/ssc/nlopt/LICENSE.htm",
+      "path": "LICENSES/third_party/ssc/nlopt/LICENSE.htm",
+      "source_sha256": "78cd5fd2247e79f1386f12f6c32770df40fd88004acc630c5f3029420a23a09a"
+    },
+    {
+      "source": "energyplus-src/third_party/ssc/splinter/unsupported/Eigen/src/LevenbergMarquardt/CopyrightMINPACK.txt",
+      "path": "LICENSES/third_party/ssc/splinter/unsupported/Eigen/src/LevenbergMarquardt/CopyrightMINPACK.txt",
+      "source_sha256": "8887036b1039e299ebcc8b95a73ea1538df548393fb8462361c80bea605a4fbe"
+    }
+  ]
+}

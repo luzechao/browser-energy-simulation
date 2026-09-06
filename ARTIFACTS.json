@@ -1,0 +1,33 @@
+[
+  {
+    "path": "build/wasm-ep/Products/energyplus.js",
+    "bytes": 88965,
+    "sha256": "dce4623f0e30eb684e2e00501d12d614290be8b9e10aa5768fc5998b88741ccd"
+  },
+  {
+    "path": "build/wasm-ep/Products/energyplus.js-26.1.wasm",
+    "bytes": 31290070,
+    "sha256": "4bdc216c26b99c723b0db9d3c02b51ecbe86cab446ff8bd1a9e44f2d1b76d469"
+  },
+  {
+    "path": "weather/EGY_QH_Cairo.Intl.AP.623660_TMYx.2007-2021.epw",
+    "bytes": 1601500,
+    "sha256": "706e2bd11efd454c4682195b4184b69576f38e2d6eb5fcb2b58b554aef94c399",
+    "included": false,
+    "reason": "Download from Climate.OneBuilding; site-specific redistribution permission not established."
+  },
+  {
+    "path": "build/native-ep/Products/energyplus-26.1.0",
+    "bytes": 249320,
+    "sha256": "03909fa99e81db19097bbeefc5b8496cc2c7b9db08bfd0617539b707a999cf51",
+    "included": false,
+    "reason": "Platform-specific native reference; rebuild from pinned source."
+  },
+  {
+    "path": "build/native-ep/Products/libenergyplusapi.so.26.1.0",
+    "bytes": 55061368,
+    "sha256": "be221f02fc9a11d8cffbe980e1ddd180ffff5565eae34a6cdaee3d8de328f000",
+    "included": false,
+    "reason": "Platform-specific native reference; rebuild from pinned source."
+  }
+]

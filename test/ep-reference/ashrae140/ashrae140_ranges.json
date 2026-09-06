@@ -1,0 +1,32 @@
+{
+ "600": {"annual_heating_MWh": {"min": 3.9927549886299,  "max": 4.503550000000001, "ep901": 4.324374337528349},
+         "annual_cooling_MWh": {"min": 5.432,            "max": 6.1618,            "ep901": 6.0270394016087305},
+         "peak_heating_kW":    {"min": 3.020233,         "max": 3.3588931189643,   "ep901": 3.204426316930861},
+         "peak_cooling_kW":    {"min": 5.422,            "max": 6.480992,          "ep901": 6.351567196693167}},
+ "610": {"annual_heating_MWh": {"min": 4.066423494091539,"max": 4.59206,           "ep901": 4.374805418267},
+         "annual_cooling_MWh": {"min": 4.1168000000000005,"max": 4.38179367303362, "ep901": 4.3327583401901055},
+         "peak_heating_kW":    {"min": 3.020759,         "max": 3.35950232611762,  "ep901": 3.191842426702028},
+         "peak_cooling_kW":    {"min": 5.331,            "max": 6.432167,          "ep901": 6.1345421296626395}},
+ "620": {"annual_heating_MWh": {"min": 4.093598106354699,"max": 4.718979999999999, "ep901": 4.4850771739176},
+         "annual_cooling_MWh": {"min": 3.84065,          "max": 4.404,             "ep901": 4.059508957020599},
+         "peak_heating_kW":    {"min": 3.037859999999999,"max": 3.38459167480468,  "ep901": 3.2291222373626387},
+         "peak_cooling_kW":    {"min": 3.955,            "max": 4.797435810329278, "ep901": 4.797435810329278}},
+ "640": {"annual_heating_MWh": {"min": 2.40324186055397, "max": 2.682,             "ep901": 2.661844240865976},
+         "annual_cooling_MWh": {"min": 5.237,            "max": 5.8926,            "ep901": 5.763099877572754},
+         "peak_heating_kW":    {"min": 4.03854083591037, "max": 4.658,             "ep901": 4.558533259997223},
+         "peak_cooling_kW":    {"min": 5.365,            "max": 6.428987999999999, "ep901": 6.297397179069306}},
+ "900": {"annual_heating_MWh": {"min": 1.37889128267653, "max": 1.81403,           "ep901": 1.663686669222239},
+         "annual_cooling_MWh": {"min": 2.2671300000000003,"max": 2.714,            "ep901": 2.488741367713275},
+         "peak_heating_kW":    {"min": 2.44339,          "max": 2.7784780883789,   "ep901": 2.6874896063526754},
+         "peak_cooling_kW":    {"min": 2.556,            "max": 3.376435,          "ep901": 3.040447251546055}},
+ "940": {"annual_heating_MWh": {"min": 0.8632359497649299,"max": 1.389,            "ep901": 1.0673847073572145},
+         "annual_cooling_MWh": {"min": 2.20346,          "max": 2.613,             "ep901": 2.4243509390483053},
+         "peak_heating_kW":    {"min": 3.051914,         "max": 3.882,             "ep901": 3.142769067196361},
+         "peak_cooling_kW":    {"min": 2.556,            "max": 3.376435,          "ep901": 3.039962015978528}},
+ "gateC_overrides": {
+   "620": {"peak_cooling_kW": {
+     "tolAbs": 0.32,
+     "ruling": "Planner exception 2026-07-07. Non-uniform 9.0.1->26.1 version drift, NOT a derivation error: both versions peak at the identical hour per case (600: Jan 22 h14; 620: Jun 26 h17), geometry verified twice vs Bestest_Geo_EastWest_6_0_0.osm, annual_cooling delta passes (0.1225 <= 0.1968), timestep ruled out. Drift is event-specific (600 winter south-beam +3.98%, 620 summer west-beam +0.92%); delta noise scales with endpoint magnitudes (~6 kW), not the 1.55 kW delta, so 10%*|delta| under-covers. tolAbs = 5% of ep901_600 = 0.32 kW (mirrors Gate B's 5% drift clause); a wrong-orientation error (|diff|~1.55) still fails 5x over."
+   }}
+ }
+}

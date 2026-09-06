@@ -1,0 +1,5 @@
+# Figure provenance
+
+`figure1_workflow.png` is the manuscript workflow image with corrected text labels. It was edited using the built-in image-generation tool on 2026-09-06, preserving the original layout and replacing obsolete validation results. Prompt: preserve the four-column diagram; distinguish five patches/six edited files from the separate OPENGL_REQUIRED=OFF option; report core maximum 3.36×10⁻⁹ and expanded maximum 1.62×10⁻⁷; report low mass 21/21 and high mass 19/19 under Section 7; clarify that files remain in the user's browser. The corrected image was visually inspected. The author should check the selected journal's policy on AI-assisted illustrations before submission. It is not empirical image evidence.
+
+`fig1_ashrae140.svg` and `.png` are the historical filenames for **Figure 2** in the current manuscript. `make_fig1.mjs` deterministically builds the SVG from recorded annual results and criteria; Chromium rasterizes it to PNG. No generative model produces the acceptance data or plot.
