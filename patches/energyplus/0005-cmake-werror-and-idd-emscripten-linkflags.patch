@@ -1,0 +1,82 @@
+From: radiance-web EnergyPlus WASM port
+Subject: [PATCH 5/5] cmake+idd: drop global -Werror; add build-time-tool link flags for Emscripten
+
+What: two independent build-system changes bundled in one patch because they
+land in cmake/ and idd/ respectively and are both "make the build succeed
+under a newer toolchain than upstream CI pins":
+
+1. cmake/CompilerFlags.cmake: comments out the global `-Werror` on
+   project_options (GCC/Clang branch) and adds `-Wno-restrict` to
+   project_warnings (GCC branch only). We compile against gcc-15 and
+   Emscripten's clang-23, both newer than EnergyPlus's upstream CI pins;
+   several third-party headers (fmt, btwxt, libtk205) trip NEW warnings on
+   these newer compilers that did not exist when -Werror was enabled upstream.
+   -Wno-restrict specifically suppresses a gcc-15 -Wrestrict false positive in
+   fmt 8's write_float when inlined through std::uninitialized_copy.
+
+2. idd/CMakeLists.txt: inside a new `if(EMSCRIPTEN)` block, sets
+   per-target link options on `generate_embeddable_epJSON_schema`
+   (-sMODULARIZE=0 -sINVOKE_RUN=1 -sNODERAWFS=1 -sEXIT_RUNTIME=1). This
+   target is a BUILD-TIME code generator invoked via node
+   (CMAKE_CROSSCOMPILING_EMULATOR) during the build itself, not a shippable
+   part of the engine. The project's global CMAKE_EXE_LINKER_FLAGS carry
+   -sMODULARIZE=1 -sINVOKE_RUN=0 for the SHIPPED energyplus.js module; under
+   those same flags this build-time tool's `node tool.js` invocation would
+   load an inert factory and run nothing, so its custom command "succeeds"
+   without ever writing EmbeddedEpJSONSchema.cc -- the failure only surfaces
+   much later as a missing-file link error. Since CMake resolves repeated
+   `-s` flags last-one-wins, the per-target override re-enables auto-run and
+   gives the tool real host-filesystem access for its argv paths.
+
+Why (toolchain, not physics): (1) is a warning-policy change that emits no
+code; (2) affects only a build-time code generator's own link flags, never
+the shipped engine binary or any physics/algorithm source.
+
+Applies to: energyplus-src/cmake/CompilerFlags.cmake, energyplus-src/idd/CMakeLists.txt
+Apply with (-p1, from the pristine energyplus-src/ tree root):
+  patch -p1 < patches/energyplus/0005-cmake-werror-and-idd-emscripten-linkflags.patch
+
+--- a/cmake/CompilerFlags.cmake
++++ b/cmake/CompilerFlags.cmake
+@@ -93,7 +93,10 @@
+ 
+   # COMPILER FLAGS
+   target_compile_options(project_options INTERFACE -pipe) # Faster compiler processing
+-  target_compile_options(project_options INTERFACE -Werror) # Compiler Driven Development
++  # -Werror removed for the radiance-web vendored build: we consume E+ on compilers
++  # (gcc 15 / emscripten clang 23) far newer than upstream CI pins; new-warning
++  # promotions in third_party (fmt, btwxt, libtk205) are false positives, not defects.
++  # target_compile_options(project_options INTERFACE -Werror) # Compiler Driven Development
+   target_compile_options(project_warnings INTERFACE -Wpedantic)
+   # Turn on warnings about constructs/situations that may be non-portable or outside of the standard
+   target_compile_options(project_warnings INTERFACE -Wall) # Turn on warnings
+@@ -120,6 +123,9 @@
+     # depending on the level of overflow check selected, the stringop-overflow can also emit false positives
+     # https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wstringop-overflow
+     target_compile_options(project_warnings INTERFACE -Wno-stringop-overflow)
++    # GCC 15 emits a -Wrestrict false positive in fmt 8's write_float when inlined
++    # through std::uninitialized_copy (same family as the false positives above)
++    target_compile_options(project_warnings INTERFACE -Wno-restrict)
+     # for RelWithDebInfo builds, lets turn OFF NDEBUG, which will re-enable assert statements
+     target_compile_options(project_options INTERFACE $<$<CONFIG:RelWithDebInfo>:-UNDEBUG>)
+   elseif("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang" OR "${CMAKE_CXX_COMPILER_ID}" STREQUAL "AppleClang")
+
+--- a/idd/CMakeLists.txt
++++ b/idd/CMakeLists.txt
+@@ -20,6 +20,16 @@
+     ( ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang" OR "${CMAKE_CXX_COMPILER_ID}" STREQUAL "AppleClang") AND (CMAKE_CXX_COMPILER_VERSION VERSION_LESS 9.0)))
+   target_link_libraries(generate_embeddable_epJSON_schema PRIVATE stdc++fs)
+ endif()
++if(EMSCRIPTEN)
++  # This is a BUILD-TIME tool executed via node (CMAKE_CROSSCOMPILING_EMULATOR),
++  # not a shippable app module. The global CMAKE_EXE_LINKER_FLAGS carry
++  # -sMODULARIZE=1 -sINVOKE_RUN=0, under which `node tool.js` loads the factory
++  # and runs nothing — the custom command "succeeds" without producing its
++  # output. Later -s settings win, so re-enable auto-run and give the tool raw
++  # host-filesystem access for its argv input/output paths.
++  target_link_options(generate_embeddable_epJSON_schema PRIVATE
++    "SHELL:-sMODULARIZE=0" "SHELL:-sINVOKE_RUN=1" "SHELL:-sNODERAWFS=1" "SHELL:-sEXIT_RUNTIME=1")
++endif()
+ 
+ add_custom_command(
+   OUTPUT "${CMAKE_CURRENT_BINARY_DIR}/embedded/EmbeddedEpJSONSchema.cc"

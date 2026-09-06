@@ -1,0 +1,111 @@
+
+=== Case 600 ===
+[600] native oracle run...
+[600] native done in 1.72s (EnergyPlus Completed Successfully-- 19 Warning; 0 Severe Errors; Elapsed Time=00hr 00min  1.46sec)
+[600] WASM run...
+[600] wasm done in 3.19s (EnergyPlus Completed Successfully-- 19 Warning; 0 Severe Errors; Elapsed Time=00hr 00min  2.95sec)
+  Gate A (WASM==native ESO): max relΔ=5.91e-8, max absΔ=3.60e-6, 27269 differing values -> PASS
+  Gate B annual_heating_MWh: v=4.2201 range=[3.9928,4.5036] ep901=4.3244 %vsEp901=2.41% clause=range -> PASS
+  Gate B annual_cooling_MWh: v=6.2592 range=[5.4320,6.1618] ep901=6.0270 %vsEp901=3.85% clause=OR-clause(~ep901) -> PASS
+  Gate B peak_heating_kW: v=3.1525 range=[3.0202,3.3589] ep901=3.2044 %vsEp901=1.62% clause=range -> PASS
+  Gate B peak_cooling_kW: v=6.6043 range=[5.4220,6.4810] ep901=6.3516 %vsEp901=3.98% clause=OR-clause(~ep901) -> PASS
+  Gate D: native severe=0 wasm severe=0 native warnings=19 wasm warnings=19 (count-match=true) unwhitelisted(native)=0 unwhitelisted(wasm)=0 -> PASS
+
+=== Case 610 ===
+[610] native oracle run...
+[610] native done in 1.33s (EnergyPlus Completed Successfully-- 19 Warning; 0 Severe Errors; Elapsed Time=00hr 00min  1.18sec)
+[610] WASM run...
+[610] wasm done in 2.82s (EnergyPlus Completed Successfully-- 19 Warning; 0 Severe Errors; Elapsed Time=00hr 00min  2.67sec)
+  Gate A (WASM==native ESO): max relΔ=5.91e-8, max absΔ=3.65e-6, 25580 differing values -> PASS
+  Gate B annual_heating_MWh: v=4.2705 range=[4.0664,4.5921] ep901=4.3748 %vsEp901=2.38% clause=range -> PASS
+  Gate B annual_cooling_MWh: v=4.5000 range=[4.1168,4.3818] ep901=4.3328 %vsEp901=3.86% clause=OR-clause(~ep901) -> PASS
+  Gate B peak_heating_kW: v=3.1398 range=[3.0208,3.3595] ep901=3.1918 %vsEp901=1.63% clause=range -> PASS
+  Gate B peak_cooling_kW: v=6.3255 range=[5.3310,6.4322] ep901=6.1345 %vsEp901=3.11% clause=range -> PASS
+  Gate D: native severe=0 wasm severe=0 native warnings=19 wasm warnings=19 (count-match=true) unwhitelisted(native)=0 unwhitelisted(wasm)=0 -> PASS
+
+=== Case 620 ===
+[620] native oracle run...
+[620] native done in 1.29s (EnergyPlus Completed Successfully-- 19 Warning; 0 Severe Errors; Elapsed Time=00hr 00min  1.13sec)
+[620] WASM run...
+[620] wasm done in 1.63s (EnergyPlus Completed Successfully-- 19 Warning; 0 Severe Errors; Elapsed Time=00hr 00min  1.49sec)
+  Gate A (WASM==native ESO): max relΔ=5.91e-8, max absΔ=3.61e-6, 26149 differing values -> PASS
+  Gate B annual_heating_MWh: v=4.3694 range=[4.0936,4.7190] ep901=4.4851 %vsEp901=2.58% clause=range -> PASS
+  Gate B annual_cooling_MWh: v=4.1692 range=[3.8407,4.4040] ep901=4.0595 %vsEp901=2.70% clause=range -> PASS
+  Gate B peak_heating_kW: v=3.1804 range=[3.0379,3.3846] ep901=3.2291 %vsEp901=1.51% clause=range -> PASS
+  Gate B peak_cooling_kW: v=4.8415 range=[3.9550,4.7974] ep901=4.7974 %vsEp901=0.92% clause=OR-clause(~ep901) -> PASS
+  Gate D: native severe=0 wasm severe=0 native warnings=19 wasm warnings=19 (count-match=true) unwhitelisted(native)=0 unwhitelisted(wasm)=0 -> PASS
+
+=== Case 640 ===
+[640] native oracle run...
+[640] native done in 1.79s (EnergyPlus Completed Successfully-- 20 Warning; 0 Severe Errors; Elapsed Time=00hr 00min  1.58sec)
+[640] WASM run...
+[640] wasm done in 3.18s (EnergyPlus Completed Successfully-- 20 Warning; 0 Severe Errors; Elapsed Time=00hr 00min  3.01sec)
+  Gate A (WASM==native ESO): max relΔ=5.91e-8, max absΔ=2.69e-6, 31221 differing values -> PASS
+  Gate B annual_heating_MWh: v=2.5806 range=[2.4032,2.6820] ep901=2.6618 %vsEp901=3.05% clause=range -> PASS
+  Gate B annual_cooling_MWh: v=6.0178 range=[5.2370,5.8926] ep901=5.7631 %vsEp901=4.42% clause=OR-clause(~ep901) -> PASS
+  Gate B peak_heating_kW: v=4.4903 range=[4.0385,4.6580] ep901=4.5585 %vsEp901=1.50% clause=range -> PASS
+  Gate B peak_cooling_kW: v=6.5632 range=[5.3650,6.4290] ep901=6.2974 %vsEp901=4.22% clause=OR-clause(~ep901) -> PASS
+  Gate D: native severe=0 wasm severe=0 native warnings=20 wasm warnings=20 (count-match=true) unwhitelisted(native)=0 unwhitelisted(wasm)=0 -> PASS
+
+=== Case 900 ===
+[900] native oracle run...
+[900] native done in 1.34s (EnergyPlus Completed Successfully-- 19 Warning; 0 Severe Errors; Elapsed Time=00hr 00min  1.10sec)
+[900] WASM run...
+[900] wasm done in 1.57s (EnergyPlus Completed Successfully-- 19 Warning; 0 Severe Errors; Elapsed Time=00hr 00min  1.45sec)
+  Gate A (WASM==native ESO): max relΔ=5.91e-8, max absΔ=2.90e-6, 27984 differing values -> PASS
+  Gate B annual_heating_MWh: v=1.5292 range=[1.3789,1.8140] ep901=1.6637 %vsEp901=8.08% clause=range -> PASS
+  Gate B annual_cooling_MWh: v=2.6137 range=[2.2671,2.7140] ep901=2.4887 %vsEp901=5.02% clause=range -> PASS
+  Gate B peak_heating_kW: v=2.6283 range=[2.4434,2.7785] ep901=2.6875 %vsEp901=2.20% clause=range -> PASS
+  Gate B peak_cooling_kW: v=3.1351 range=[2.5560,3.3764] ep901=3.0404 %vsEp901=3.11% clause=range -> PASS
+  Gate D: native severe=0 wasm severe=0 native warnings=19 wasm warnings=19 (count-match=true) unwhitelisted(native)=0 unwhitelisted(wasm)=0 -> PASS
+
+=== Case 940 ===
+[940] native oracle run...
+[940] native done in 1.66s (EnergyPlus Completed Successfully-- 20 Warning; 0 Severe Errors; Elapsed Time=00hr 00min  1.46sec)
+[940] WASM run...
+[940] wasm done in 3.28s (EnergyPlus Completed Successfully-- 20 Warning; 0 Severe Errors; Elapsed Time=00hr 00min  3.13sec)
+  Gate A (WASM==native ESO): max relΔ=5.91e-8, max absΔ=2.59e-6, 33022 differing values -> PASS
+  Gate B annual_heating_MWh: v=0.9725 range=[0.8632,1.3890] ep901=1.0674 %vsEp901=8.89% clause=range -> PASS
+  Gate B annual_cooling_MWh: v=2.5425 range=[2.2035,2.6130] ep901=2.4244 %vsEp901=4.87% clause=range -> PASS
+  Gate B peak_heating_kW: v=3.0860 range=[3.0519,3.8820] ep901=3.1428 %vsEp901=1.81% clause=range -> PASS
+  Gate B peak_cooling_kW: v=3.1311 range=[2.5560,3.3764] ep901=3.0400 %vsEp901=3.00% clause=range -> PASS
+  Gate D: native severe=0 wasm severe=0 native warnings=20 wasm warnings=20 (count-match=true) unwhitelisted(native)=0 unwhitelisted(wasm)=0 -> PASS
+
+=== Gate C: sensitivity deltas vs Case 600 ===
+  610 annual_heating_MWh: ΔmodelΔ=0.0505 Δep901=0.0504 |diff|=0.0001 tol=0.1500 -> PASS
+  610 annual_cooling_MWh: ΔmodelΔ=-1.7592 Δep901=-1.6943 |diff|=0.0649 tol=0.1694 -> PASS
+  610 peak_heating_kW: ΔmodelΔ=-0.0127 Δep901=-0.0126 |diff|=0.0001 tol=0.1500 -> PASS
+  610 peak_cooling_kW: ΔmodelΔ=-0.2788 Δep901=-0.2170 |diff|=0.0618 tol=0.1500 -> PASS
+  620 annual_heating_MWh: ΔmodelΔ=0.1493 Δep901=0.1607 |diff|=0.0114 tol=0.1500 -> PASS
+  620 annual_cooling_MWh: ΔmodelΔ=-2.0900 Δep901=-1.9675 |diff|=0.1225 tol=0.1968 -> PASS
+  620 peak_heating_kW: ΔmodelΔ=0.0278 Δep901=0.0247 |diff|=0.0031 tol=0.1500 -> PASS
+  620 peak_cooling_kW: ΔmodelΔ=-1.7628 Δep901=-1.5541 |diff|=0.2087 tol=0.3200 -> PASS
+  OVERRIDE case 620 peak_cooling_kW: tolAbs=0.32 (planner ruling 2026-07-07 — see ashrae140_ranges.json gateC_overrides + PROVENANCE.md); base tol 0.1554 would have FAILED
+  640 annual_heating_MWh: ΔmodelΔ=-1.6395 Δep901=-1.6625 |diff|=0.0231 tol=0.1663 -> PASS
+  640 annual_cooling_MWh: ΔmodelΔ=-0.2414 Δep901=-0.2639 |diff|=0.0226 tol=0.1500 -> PASS
+  640 peak_heating_kW: ΔmodelΔ=1.3378 Δep901=1.3541 |diff|=0.0163 tol=0.1500 -> PASS
+  640 peak_cooling_kW: ΔmodelΔ=-0.0411 Δep901=-0.0542 |diff|=0.0131 tol=0.1500 -> PASS
+  900 annual_heating_MWh: ΔmodelΔ=-2.6909 Δep901=-2.6607 |diff|=0.0302 tol=0.2661 -> PASS
+  900 annual_cooling_MWh: ΔmodelΔ=-3.6455 Δep901=-3.5383 |diff|=0.1072 tol=0.3538 -> PASS
+  900 peak_heating_kW: ΔmodelΔ=-0.5242 Δep901=-0.5169 |diff|=0.0073 tol=0.1500 -> PASS
+  900 peak_cooling_kW: ΔmodelΔ=-3.4693 Δep901=-3.3111 |diff|=0.1581 tol=0.3311 -> PASS
+  940 annual_heating_MWh: ΔmodelΔ=-3.2476 Δep901=-3.2570 |diff|=0.0094 tol=0.3257 -> PASS
+  940 annual_cooling_MWh: ΔmodelΔ=-3.7167 Δep901=-3.6027 |diff|=0.1140 tol=0.3603 -> PASS
+  940 peak_heating_kW: ΔmodelΔ=-0.0665 Δep901=-0.0617 |diff|=0.0048 tol=0.1500 -> PASS
+  940 peak_cooling_kW: ΔmodelΔ=-3.4732 Δep901=-3.3116 |diff|=0.1616 tol=0.3312 -> PASS
+
+=== Gate C overrides applied ===
+  - case 620 / peak_cooling_kW: tolAbs=0.32 (base tol 0.1554, diff 0.2087)
+
+=== Runtime summary ===
+  case 600: native 1.72s / wasm 3.19s
+  case 610: native 1.33s / wasm 2.82s
+  case 620: native 1.29s / wasm 1.63s
+  case 640: native 1.79s / wasm 3.18s
+  case 900: native 1.34s / wasm 1.57s
+  case 940: native 1.66s / wasm 3.28s
+
+=== Escalations ===
+  none
+
+PASS: ASHRAE 140 gate (6 cases, clauses A/B/C/D)

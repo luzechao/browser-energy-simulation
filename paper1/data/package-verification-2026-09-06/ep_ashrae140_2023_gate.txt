@@ -1,0 +1,33 @@
+ANSI/ASHRAE Standard 140-2023 as published, Section 7
+Running 21 cases (native oracle + WASM under test)...
+  600: H=4.3248 MWh, C=6.0405 MWh; native 1.8s / WASM 3.6s; ESO relΔ=2.55e-10; OK
+  610: H=4.3750 MWh, C=4.3437 MWh; native 1.7s / WASM 3.5s; ESO relΔ=1.98e-10; OK
+  620: H=4.4828 MWh, C=4.0696 MWh; native 2.0s / WASM 2.2s; ESO relΔ=4.83e-10; OK
+  630: H=4.7800 MWh, C=2.8430 MWh; native 1.8s / WASM 4.2s; ESO relΔ=2.74e-10; OK
+  640: H=2.6587 MWh, C=5.7768 MWh; native 1.8s / WASM 2.1s; ESO relΔ=7.23e-11; OK
+  650: H=0.0000 MWh, C=4.8402 MWh; native 1.7s / WASM 3.9s; ESO relΔ=1.86e-11; OK
+  660: H=3.7065 MWh, C=3.2406 MWh; native 1.8s / WASM 2.1s; ESO relΔ=9.99e-10; OK
+  670: H=5.6147 MWh, C=6.6369 MWh; native 1.5s / WASM 3.6s; ESO relΔ=1.41e-9; OK
+  680: H=2.1791 MWh, C=6.4539 MWh; native 1.8s / WASM 2.0s; ESO relΔ=1.59e-9; OK
+  685: H=4.8762 MWh, C=9.1255 MWh; native 1.6s / WASM 3.6s; ESO relΔ=1.91e-10; OK
+  695: H=2.8012 MWh, C=9.1751 MWh; native 2.0s / WASM 1.9s; ESO relΔ=3.82e-10; OK
+  900: H=1.6612 MWh, C=2.4928 MWh; native 1.6s / WASM 3.8s; ESO relΔ=5.94e-9; OK
+  910: H=1.9528 MWh, C=1.3861 MWh; native 2.0s / WASM 2.2s; ESO relΔ=2.61e-9; OK
+  920: H=3.3315 MWh, C=2.7338 MWh; native 1.9s / WASM 3.8s; ESO relΔ=2.29e-10; OK
+  930: H=3.9884 MWh, C=1.9215 MWh; native 2.0s / WASM 2.4s; ESO relΔ=1.96e-9; OK
+  940: H=1.0642 MWh, C=2.4281 MWh; native 1.9s / WASM 3.6s; ESO relΔ=3.83e-9; OK
+  950: H=0.0000 MWh, C=0.6944 MWh; native 1.8s / WASM 2.3s; ESO relΔ=4.75e-10; OK
+  960: H=2.7015 MWh, C=0.9024 MWh; native 1.9s / WASM 4.1s; ESO relΔ=1.08e-7; OK
+  980: H=0.4061 MWh, C=3.7267 MWh; native 1.8s / WASM 2.0s; ESO relΔ=1.62e-7; OK
+  985: H=2.3671 MWh, C=6.3643 MWh; native 1.7s / WASM 3.6s; ESO relΔ=2.26e-9; OK
+  995: H=0.9997 MWh, C=7.2130 MWh; native 2.0s / WASM 2.1s; ESO relΔ=1.49e-7; OK
+
+ASHRAE 140-2023 Section 7 annual acceptance groups:
+  Low-mass annual heating and cooling: 21/21 pass; minimum 18 -> PASS
+  High-mass annual heating and cooling: 19/19 pass; minimum 17 -> PASS
+
+Extra project checks (not ASHRAE acceptance criteria):
+  Native/WASM ESO agreement, run health, warning parity: PASS
+
+PASS: ANSI/ASHRAE Standard 140-2023 as published Section 7 annual-load acceptance criteria
+PASS: repository native/WASM consistency requirements

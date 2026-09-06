@@ -1,0 +1,36 @@
+From: radiance-web EnergyPlus WASM port
+Subject: [PATCH 4/5] third_party/fmt-8.0.1: disable FMT_CONSTEVAL for clang >= 15
+
+What: for `FMT_CLANG_VERSION >= 1500`, `#define FMT_CONSTEVAL` to empty,
+disabling fmt 8's consteval compile-time format-string check for that
+compiler branch (the pre-existing gcc>=10 / clang 11.0-14.99 branch is
+untouched).
+
+Why (toolchain, not physics): fmt 8.0.1's `consteval basic_format_string`
+check interacts badly with clang >= 15 (a hard "call to consteval function is
+not a constant expression" error surfaces from format-inl.h via FMT_STRING
+call sites in EnergyPlus). Disabling consteval only removes the COMPILE-TIME
+format-string validation pass; runtime formatting behavior (the actual string
+output) is unchanged for every call site, matching call site, in the codebase.
+
+Applies to: energyplus-src/third_party/fmt-8.0.1/include/fmt/core.h
+Apply with (-p1, from the pristine energyplus-src/ tree root):
+  patch -p1 < patches/energyplus/0004-fmt8-consteval-clang15.patch
+
+--- a/third_party/fmt-8.0.1/include/fmt/core.h
++++ b/third_party/fmt-8.0.1/include/fmt/core.h
+@@ -293,7 +293,13 @@
+ #endif
+ 
+ #ifndef FMT_CONSTEVAL
+-#  if ((FMT_GCC_VERSION >= 1000 || FMT_CLANG_VERSION >= 1101) && \
++#  if FMT_CLANG_VERSION >= 1500
++// fmt 8's consteval basic_format_string interacts badly with clang >= 15
++// (hard error "call to consteval function is not a constant expression" in
++// format-inl.h via FMT_STRING). Disabling consteval only removes the
++// compile-time format-string check; runtime formatting is unchanged.
++#    define FMT_CONSTEVAL
++#  elif ((FMT_GCC_VERSION >= 1000 || FMT_CLANG_VERSION >= 1101) && \
+        __cplusplus > 201703L) ||                                 \
+       (defined(__cpp_consteval) &&                               \
+        !FMT_MSC_VER)  // consteval is broken in MSVC.

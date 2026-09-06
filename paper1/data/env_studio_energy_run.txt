@@ -1,0 +1,37 @@
+Drawing cairo-room via the real BlockModel and launching energyRun()…
+  PASS  one zone compiled from the drawn room
+  PASS  pipeline completed without error
+  PASS  run reports ok
+  PASS  severe === 0
+  seconds=2.9  warnings=1
+  UI streams: {
+  heating: '412 kWh (22.9 kWh/m²)',
+  cooling: '3231 kWh (179.5 kWh/m²)',
+  lights: '591 kWh (32.8 kWh/m²)',
+  equipment: '986 kWh (54.8 kWh/m²)',
+  popupOpen: true
+}
+  PASS  results popup auto-opened
+  PASS  heating value shown
+  PASS  cooling value shown
+  PASS  lighting value shown
+  PASS  equipment value shown
+  main-thread setInterval ticks: 8
+  PASS  main thread stayed alive during the run (≥1 tick)
+  download messages: 67, distinct progress fractions: 19
+  PASS  at least one download-progress message (cold cache)
+  PASS  3+ distinct run-progress fractions observed
+Computing Node-side reference (same BTM, same wasm)…
+  PASS  Node reference run: severe === 0
+  stream       browser kWh      node kWh      relΔ
+  heating         411.8897     411.8897  0.00e+0
+  PASS  heating: browser matches Node reference within 1e-9 relative
+  cooling        3231.2775    3231.2775  0.00e+0
+  PASS  cooling: browser matches Node reference within 1e-9 relative
+  lights          591.3000     591.3000  0.00e+0
+  PASS  lights: browser matches Node reference within 1e-9 relative
+  equipment       985.5000     985.5000  0.00e+0
+  PASS  equipment: browser matches Node reference within 1e-9 relative
+  PASS  no page errors during the run
+
+✓ ENV_STUDIO END-TO-END ENERGY GATE CLEARED

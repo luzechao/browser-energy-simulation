@@ -1,0 +1,42 @@
+{
+  "run_date": "2026-08-11",
+  "command": "node test/ep_ashrae140_2023_gate.mjs",
+  "energyplus_version": "26.1.0",
+  "standard": "ANSI/ASHRAE Standard 140-2023 as published",
+  "scope": "Section 7 annual heating and cooling acceptance groups",
+  "units": "MWh",
+  "cases": {
+    "600": { "heating": 4.3248, "cooling": 6.0405, "max_eso_relative_delta": 2.55e-10 },
+    "610": { "heating": 4.3750, "cooling": 4.3437, "max_eso_relative_delta": 1.98e-10 },
+    "620": { "heating": 4.4828, "cooling": 4.0696, "max_eso_relative_delta": 4.83e-10 },
+    "630": { "heating": 4.7800, "cooling": 2.8430, "max_eso_relative_delta": 2.74e-10 },
+    "640": { "heating": 2.6587, "cooling": 5.7768, "max_eso_relative_delta": 7.23e-11 },
+    "650": { "heating": 0.0000, "cooling": 4.8402, "max_eso_relative_delta": 1.86e-11 },
+    "660": { "heating": 3.7065, "cooling": 3.2406, "max_eso_relative_delta": 9.99e-10 },
+    "670": { "heating": 5.6147, "cooling": 6.6369, "max_eso_relative_delta": 1.41e-9 },
+    "680": { "heating": 2.1791, "cooling": 6.4539, "max_eso_relative_delta": 1.59e-9 },
+    "685": { "heating": 4.8762, "cooling": 9.1255, "max_eso_relative_delta": 1.91e-10 },
+    "695": { "heating": 2.8012, "cooling": 9.1751, "max_eso_relative_delta": 3.82e-10 },
+    "900": { "heating": 1.6612, "cooling": 2.4928, "max_eso_relative_delta": 5.94e-9 },
+    "910": { "heating": 1.9528, "cooling": 1.3861, "max_eso_relative_delta": 2.61e-9 },
+    "920": { "heating": 3.3315, "cooling": 2.7338, "max_eso_relative_delta": 2.29e-10 },
+    "930": { "heating": 3.9884, "cooling": 1.9215, "max_eso_relative_delta": 1.96e-9 },
+    "940": { "heating": 1.0642, "cooling": 2.4281, "max_eso_relative_delta": 3.83e-9 },
+    "950": { "heating": 0.0000, "cooling": 0.6944, "max_eso_relative_delta": 4.75e-10 },
+    "960": { "heating": 2.7015, "cooling": 0.9024, "max_eso_relative_delta": 1.08e-7 },
+    "980": { "heating": 0.4061, "cooling": 3.7267, "max_eso_relative_delta": 1.62e-7 },
+    "985": { "heating": 2.3671, "cooling": 6.3643, "max_eso_relative_delta": 2.26e-9 },
+    "995": { "heating": 0.9997, "cooling": 7.2130, "max_eso_relative_delta": 1.49e-7 }
+  },
+  "groups": {
+    "low_mass_annual": { "passing": 21, "total": 21, "minimum": 18, "verdict": "PASS" },
+    "high_mass_annual": { "passing": 19, "total": 19, "minimum": 17, "verdict": "PASS" }
+  },
+  "project_checks": {
+    "maximum_eso_relative_delta": 1.62e-7,
+    "threshold": 1e-6,
+    "severe_errors": 0,
+    "warning_count_parity": true,
+    "verdict": "PASS"
+  }
+}

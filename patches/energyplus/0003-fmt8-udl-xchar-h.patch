@@ -1,0 +1,31 @@
+From: radiance-web EnergyPlus WASM port
+Subject: [PATCH 3/5] third_party/fmt-8.0.1: de-space user-defined-literal operators (xchar.h)
+
+What: `operator"" _format` -> `operator""_format` and `operator"" _a` -> `operator""_a`
+in xchar.h (the wchar_t overloads; format.h's char overloads are patch 0002).
+
+Why (toolchain, not physics): same clang>=23 deprecated-literal-operator
+promotion as patch 0002 -- tokenization-only, no behavior change.
+
+Applies to: energyplus-src/third_party/fmt-8.0.1/include/fmt/xchar.h
+Apply with (-p1, from the pristine energyplus-src/ tree root):
+  patch -p1 < patches/energyplus/0003-fmt8-udl-xchar-h.patch
+
+--- a/third_party/fmt-8.0.1/include/fmt/xchar.h
++++ b/third_party/fmt-8.0.1/include/fmt/xchar.h
+@@ -47,13 +47,13 @@
+ }
+ 
+ inline namespace literals {
+-constexpr auto operator"" _format(const wchar_t* s, size_t n)
++constexpr auto operator""_format(const wchar_t* s, size_t n)
+     -> detail::udl_formatter<wchar_t> {
+   return {{s, n}};
+ }
+ 
+ #if FMT_USE_USER_DEFINED_LITERALS && !FMT_USE_NONTYPE_TEMPLATE_PARAMETERS
+-constexpr detail::udl_arg<wchar_t> operator"" _a(const wchar_t* s, size_t) {
++constexpr detail::udl_arg<wchar_t> operator""_a(const wchar_t* s, size_t) {
+   return {s};
+ }
+ #endif

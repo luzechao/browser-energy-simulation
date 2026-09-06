@@ -1,0 +1,8 @@
+rep2:   seconds=3.4  warnings=1
+rep2: ✓ ENV_STUDIO END-TO-END ENERGY GATE CLEARED
+rep3:   seconds=3.2  warnings=1
+rep3: ✓ ENV_STUDIO END-TO-END ENERGY GATE CLEARED
+rep4:   seconds=3.1  warnings=1
+rep4: ✓ ENV_STUDIO END-TO-END ENERGY GATE CLEARED
+rep5:   seconds=3.0  warnings=1
+rep5: ✓ ENV_STUDIO END-TO-END ENERGY GATE CLEARED

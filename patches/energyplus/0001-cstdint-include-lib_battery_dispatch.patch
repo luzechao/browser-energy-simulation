@@ -1,0 +1,26 @@
+From: radiance-web EnergyPlus WASM port
+Subject: [PATCH 1/5] third_party/ssc: add missing <cstdint> include
+
+What: adds `#include <cstdint>` to lib_battery_dispatch.cpp.
+
+Why (toolchain, not physics): the file uses SIZE_MAX, which older glibc/libstdc++
+transitively pulled in via other headers. gcc >= 15 (and Emscripten's clang-based
+toolchain) no longer guarantees that transitive include, so the file fails to
+compile with "SIZE_MAX was not declared in this scope" unless <cstdint> is
+included directly. Pure header hygiene -- no code path or numerical behavior
+changes.
+
+Applies to: energyplus-src/third_party/ssc/shared/lib_battery_dispatch.cpp
+Apply with (-p1, from the pristine energyplus-src/ tree root):
+  patch -p1 < patches/energyplus/0001-cstdint-include-lib_battery_dispatch.patch
+
+--- a/third_party/ssc/shared/lib_battery_dispatch.cpp
++++ b/third_party/ssc/shared/lib_battery_dispatch.cpp
+@@ -25,6 +25,7 @@
+ #include "lib_shared_inverter.h"
+ 
+ #include <math.h>
++#include <cstdint> /* SIZE_MAX not transitively included with gcc>=15 */
+ #include <algorithm>
+ 
+ /*

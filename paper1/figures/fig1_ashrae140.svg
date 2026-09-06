@@ -1,0 +1,295 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1450" viewBox="0 0 1200 1450" font-family="Arial, Helvetica, sans-serif">
+<rect width="1200" height="1450" fill="white"/>
+<rect x="38" y="40" width="1124" height="650" rx="8" fill="#fbfcfd" stroke="#aeb7c2"/>
+<text x="56" y="70" font-size="23" font-weight="700" fill="#18202a">(a) Low-mass annual heating and cooling</text>
+<text x="1162" y="70" font-size="19" font-weight="700" text-anchor="end" fill="#1b6b3a">21/21 pass; minimum 18</text>
+<text x="226" y="93" font-size="16" fill="#59636f">Annual load or case difference (MWh)</text>
+<text x="1162" y="93" font-size="16" text-anchor="end" fill="#59636f">WASM result</text>
+<line x1="256.46153846153845" y1="98" x2="256.46153846153845" y2="650" stroke="#e7eaee" stroke-width="1" />
+<text x="256.46153846153845" y="674" font-size="17" text-anchor="middle" fill="#59636f">-3</text>
+<line x1="484.9230769230769" y1="98" x2="484.9230769230769" y2="650" stroke="#aab2bc" stroke-width="1.5" stroke-dasharray="5 4"/>
+<text x="484.9230769230769" y="674" font-size="17" text-anchor="middle" fill="#59636f">0</text>
+<line x1="713.3846153846155" y1="98" x2="713.3846153846155" y2="650" stroke="#e7eaee" stroke-width="1" />
+<text x="713.3846153846155" y="674" font-size="17" text-anchor="middle" fill="#59636f">3</text>
+<line x1="941.8461538461538" y1="98" x2="941.8461538461538" y2="650" stroke="#e7eaee" stroke-width="1" />
+<text x="941.8461538461538" y="674" font-size="17" text-anchor="middle" fill="#59636f">6</text>
+<text x="212" y="126.66666666666667" font-size="18" text-anchor="end" fill="#18202a">600 · H</text>
+<line x1="770.5" y1="120.66666666666667" x2="864.1692307692308" y2="120.66666666666667" stroke="#cbd3dc" stroke-width="11" stroke-linecap="round"/>
+<line x1="770.5" y1="113.66666666666667" x2="770.5" y2="127.66666666666667" stroke="#7f8b99" stroke-width="1.5"/>
+<line x1="864.1692307692308" y1="113.66666666666667" x2="864.1692307692308" y2="127.66666666666667" stroke="#7f8b99" stroke-width="1.5"/>
+<circle cx="814.2732307692307" cy="120.66666666666667" r="6" fill="#1f5a94" stroke="white" stroke-width="1.5"/>
+<text x="1162" y="126.66666666666667" font-size="18" text-anchor="end" fill="#18202a">4.325</text>
+<rect x="39" y="133.33333333333334" width="1122" height="25.333333333333332" fill="#f5f7f9"/>
+<text x="212" y="152" font-size="18" text-anchor="end" fill="#18202a">600 · C</text>
+<line x1="865.6923076923077" y1="146" x2="1005.0538461538462" y2="146" stroke="#cbd3dc" stroke-width="11" stroke-linecap="round"/>
+<line x1="865.6923076923077" y1="139" x2="865.6923076923077" y2="153" stroke="#7f8b99" stroke-width="1.5"/>
+<line x1="1005.0538461538462" y1="139" x2="1005.0538461538462" y2="153" stroke="#7f8b99" stroke-width="1.5"/>
+<path d="M 944.9303846153846 139 L 951.9303846153846 146 L 944.9303846153846 153 L 937.9303846153846 146 Z" fill="#c45b16" stroke="white" stroke-width="1.5"/>
+<text x="1162" y="152" font-size="18" text-anchor="end" fill="#18202a">6.040</text>
+<text x="212" y="177.33333333333331" font-size="18" text-anchor="end" fill="#18202a">610−600 · H</text>
+<line x1="474.2615384615384" y1="171.33333333333331" x2="507.00769230769225" y2="171.33333333333331" stroke="#cbd3dc" stroke-width="11" stroke-linecap="round"/>
+<line x1="474.2615384615384" y1="164.33333333333331" x2="474.2615384615384" y2="178.33333333333331" stroke="#7f8b99" stroke-width="1.5"/>
+<line x1="507.00769230769225" y1="164.33333333333331" x2="507.00769230769225" y2="178.33333333333331" stroke="#7f8b99" stroke-width="1.5"/>
+<circle cx="488.746" cy="171.33333333333331" r="6" fill="#1f5a94" stroke="white" stroke-width="1.5"/>
+<text x="1162" y="177.33333333333331" font-size="18" text-anchor="end" fill="#18202a">0.050</text>
+<rect x="39" y="184" width="1122" height="25.333333333333332" fill="#f5f7f9"/>
+<text x="212" y="202.66666666666666" font-size="18" text-anchor="end" fill="#18202a">610−600 · C</text>
+<line x1="312.81538461538463" y1="196.66666666666666" x2="423.99999999999994" y2="196.66666666666666" stroke="#cbd3dc" stroke-width="11" stroke-linecap="round"/>
+<line x1="312.81538461538463" y1="189.66666666666666" x2="312.81538461538463" y2="203.66666666666666" stroke="#7f8b99" stroke-width="1.5"/>
+<line x1="423.99999999999994" y1="189.66666666666666" x2="423.99999999999994" y2="203.66666666666666" stroke="#7f8b99" stroke-width="1.5"/>
+<path d="M 355.70523076923075 189.66666666666666 L 362.70523076923075 196.66666666666666 L 355.70523076923075 203.66666666666666 L 348.70523076923075 196.66666666666666 Z" fill="#c45b16" stroke="white" stroke-width="1.5"/>
+<text x="1162" y="202.66666666666666" font-size="18" text-anchor="end" fill="#18202a">-1.697</text>
+<text x="212" y="228" font-size="18" text-anchor="end" fill="#18202a">620−600 · H</text>
+<line x1="478.8307692307692" y1="222" x2="515.3846153846154" y2="222" stroke="#cbd3dc" stroke-width="11" stroke-linecap="round"/>
+<line x1="478.8307692307692" y1="215" x2="478.8307692307692" y2="229" stroke="#7f8b99" stroke-width="1.5"/>
+<line x1="515.3846153846154" y1="215" x2="515.3846153846154" y2="229" stroke="#7f8b99" stroke-width="1.5"/>
+<circle cx="496.9553846153847" cy="222" r="6" fill="#1f5a94" stroke="white" stroke-width="1.5"/>
+<text x="1162" y="228" font-size="18" text-anchor="end" fill="#18202a">0.158</text>
+<rect x="39" y="234.66666666666666" width="1122" height="25.333333333333332" fill="#f5f7f9"/>
+<text x="212" y="253.33333333333331" font-size="18" text-anchor="end" fill="#18202a">620−600 · C</text>
+<line x1="314.3384615384615" y1="247.33333333333331" x2="360.03076923076924" y2="247.33333333333331" stroke="#cbd3dc" stroke-width="11" stroke-linecap="round"/>
+<line x1="314.3384615384615" y1="240.33333333333331" x2="314.3384615384615" y2="254.33333333333331" stroke="#7f8b99" stroke-width="1.5"/>
+<line x1="360.03076923076924" y1="240.33333333333331" x2="360.03076923076924" y2="254.33333333333331" stroke="#7f8b99" stroke-width="1.5"/>
+<path d="M 334.83146153846155 240.33333333333331 L 341.83146153846155 247.33333333333331 L 334.83146153846155 254.33333333333331 L 327.83146153846155 247.33333333333331 Z" fill="#c45b16" stroke="white" stroke-width="1.5"/>
+<text x="1162" y="253.33333333333331" font-size="18" text-anchor="end" fill="#18202a">-1.971</text>
+<text x="212" y="278.66666666666663" font-size="18" text-anchor="end" fill="#18202a">630−620 · H</text>
+<line x1="486.44615384615383" y1="272.66666666666663" x2="541.2769230769231" y2="272.66666666666663" stroke="#cbd3dc" stroke-width="11" stroke-linecap="round"/>
+<line x1="486.44615384615383" y1="265.66666666666663" x2="486.44615384615383" y2="279.66666666666663" stroke="#7f8b99" stroke-width="1.5"/>
+<line x1="541.2769230769231" y1="265.66666666666663" x2="541.2769230769231" y2="279.66666666666663" stroke="#7f8b99" stroke-width="1.5"/>
+<circle cx="507.556" cy="272.66666666666663" r="6" fill="#1f5a94" stroke="white" stroke-width="1.5"/>
+<text x="1162" y="278.66666666666663" font-size="18" text-anchor="end" fill="#18202a">0.297</text>
+<rect x="39" y="285.3333333333333" width="1122" height="25.333333333333332" fill="#f5f7f9"/>
+<text x="212" y="304" font-size="18" text-anchor="end" fill="#18202a">630−620 · C</text>
+<line x1="356.9846153846154" y1="298" x2="426.28461538461534" y2="298" stroke="#cbd3dc" stroke-width="11" stroke-linecap="round"/>
+<line x1="356.9846153846154" y1="291" x2="356.9846153846154" y2="305" stroke="#7f8b99" stroke-width="1.5"/>
+<line x1="426.28461538461534" y1="291" x2="426.28461538461534" y2="305" stroke="#7f8b99" stroke-width="1.5"/>
+<path d="M 391.5127692307692 291 L 398.5127692307692 298 L 391.5127692307692 305 L 384.5127692307692 298 Z" fill="#c45b16" stroke="white" stroke-width="1.5"/>
+<text x="1162" y="304" font-size="18" text-anchor="end" fill="#18202a">-1.227</text>
+<text x="212" y="329.3333333333333" font-size="18" text-anchor="end" fill="#18202a">640−600 · H</text>
+<line x1="319.66923076923075" y1="323.3333333333333" x2="392.0153846153846" y2="323.3333333333333" stroke="#cbd3dc" stroke-width="11" stroke-linecap="round"/>
+<line x1="319.66923076923075" y1="316.3333333333333" x2="319.66923076923075" y2="330.3333333333333" stroke="#7f8b99" stroke-width="1.5"/>
+<line x1="392.0153846153846" y1="316.3333333333333" x2="392.0153846153846" y2="330.3333333333333" stroke="#7f8b99" stroke-width="1.5"/>
+<circle cx="358.0431538461538" cy="323.3333333333333" r="6" fill="#1f5a94" stroke="white" stroke-width="1.5"/>
+<text x="1162" y="329.3333333333333" font-size="18" text-anchor="end" fill="#18202a">-1.666</text>
+<rect x="39" y="335.99999999999994" width="1122" height="25.333333333333332" fill="#f5f7f9"/>
+<text x="212" y="354.66666666666663" font-size="18" text-anchor="end" fill="#18202a">640−600 · C</text>
+<line x1="442.276923076923" y1="348.66666666666663" x2="487.20769230769224" y2="348.66666666666663" stroke="#cbd3dc" stroke-width="11" stroke-linecap="round"/>
+<line x1="442.276923076923" y1="341.66666666666663" x2="442.276923076923" y2="355.66666666666663" stroke="#7f8b99" stroke-width="1.5"/>
+<line x1="487.20769230769224" y1="341.66666666666663" x2="487.20769230769224" y2="355.66666666666663" stroke="#7f8b99" stroke-width="1.5"/>
+<path d="M 464.8413076923077 341.66666666666663 L 471.8413076923077 348.66666666666663 L 464.8413076923077 355.66666666666663 L 457.8413076923077 348.66666666666663 Z" fill="#c45b16" stroke="white" stroke-width="1.5"/>
+<text x="1162" y="354.66666666666663" font-size="18" text-anchor="end" fill="#18202a">-0.264</text>
+<text x="212" y="380" font-size="18" text-anchor="end" fill="#18202a">650−600 · C</text>
+<line x1="367.6461538461538" y1="374" x2="412.5769230769231" y2="374" stroke="#cbd3dc" stroke-width="11" stroke-linecap="round"/>
+<line x1="367.6461538461538" y1="367" x2="367.6461538461538" y2="381" stroke="#7f8b99" stroke-width="1.5"/>
+<line x1="412.5769230769231" y1="367" x2="412.5769230769231" y2="381" stroke="#7f8b99" stroke-width="1.5"/>
+<path d="M 393.51561538461544 367 L 400.51561538461544 374 L 393.51561538461544 381 L 386.51561538461544 374 Z" fill="#c45b16" stroke="white" stroke-width="1.5"/>
+<text x="1162" y="380" font-size="18" text-anchor="end" fill="#18202a">-1.200</text>
+<rect x="39" y="386.66666666666663" width="1122" height="25.333333333333332" fill="#f5f7f9"/>
+<text x="212" y="405.3333333333333" font-size="18" text-anchor="end" fill="#18202a">660−600 · H</text>
+<line x1="403.4384615384615" y1="399.3333333333333" x2="472.7384615384615" y2="399.3333333333333" stroke="#cbd3dc" stroke-width="11" stroke-linecap="round"/>
+<line x1="403.4384615384615" y1="392.3333333333333" x2="403.4384615384615" y2="406.3333333333333" stroke="#7f8b99" stroke-width="1.5"/>
+<line x1="472.7384615384615" y1="392.3333333333333" x2="472.7384615384615" y2="406.3333333333333" stroke="#7f8b99" stroke-width="1.5"/>
+<circle cx="437.8371538461539" cy="399.3333333333333" r="6" fill="#1f5a94" stroke="white" stroke-width="1.5"/>
+<text x="1162" y="405.3333333333333" font-size="18" text-anchor="end" fill="#18202a">-0.618</text>
+<text x="212" y="430.66666666666663" font-size="18" text-anchor="end" fill="#18202a">660−600 · C</text>
+<line x1="249.6076923076923" y1="424.66666666666663" x2="294.53846153846155" y2="424.66666666666663" stroke="#cbd3dc" stroke-width="11" stroke-linecap="round"/>
+<line x1="249.6076923076923" y1="417.66666666666663" x2="249.6076923076923" y2="431.66666666666663" stroke="#7f8b99" stroke-width="1.5"/>
+<line x1="294.53846153846155" y1="417.66666666666663" x2="294.53846153846155" y2="431.66666666666663" stroke="#7f8b99" stroke-width="1.5"/>
+<path d="M 271.6999230769231 417.66666666666663 L 278.6999230769231 424.66666666666663 L 271.6999230769231 431.66666666666663 L 264.6999230769231 424.66666666666663 Z" fill="#c45b16" stroke="white" stroke-width="1.5"/>
+<text x="1162" y="430.66666666666663" font-size="18" text-anchor="end" fill="#18202a">-2.800</text>
+<rect x="39" y="437.3333333333333" width="1122" height="25.333333333333332" fill="#f5f7f9"/>
+<text x="212" y="456" font-size="18" text-anchor="end" fill="#18202a">670−600 · H</text>
+<line x1="503.96153846153845" y1="450" x2="711.8615384615384" y2="450" stroke="#cbd3dc" stroke-width="11" stroke-linecap="round"/>
+<line x1="503.96153846153845" y1="443" x2="503.96153846153845" y2="457" stroke="#7f8b99" stroke-width="1.5"/>
+<line x1="711.8615384615384" y1="443" x2="711.8615384615384" y2="457" stroke="#7f8b99" stroke-width="1.5"/>
+<circle cx="583.1539230769231" cy="450" r="6" fill="#1f5a94" stroke="white" stroke-width="1.5"/>
+<text x="1162" y="456" font-size="18" text-anchor="end" fill="#18202a">1.290</text>
+<text x="212" y="481.3333333333333" font-size="18" text-anchor="end" fill="#18202a">670−600 · C</text>
+<line x1="488.7307692307692" y1="475.3333333333333" x2="548.8923076923077" y2="475.3333333333333" stroke="#cbd3dc" stroke-width="11" stroke-linecap="round"/>
+<line x1="488.7307692307692" y1="468.3333333333333" x2="488.7307692307692" y2="482.3333333333333" stroke="#7f8b99" stroke-width="1.5"/>
+<line x1="548.8923076923077" y1="468.3333333333333" x2="548.8923076923077" y2="482.3333333333333" stroke="#7f8b99" stroke-width="1.5"/>
+<path d="M 530.3412307692308 468.3333333333333 L 537.3412307692308 475.3333333333333 L 530.3412307692308 482.3333333333333 L 523.3412307692308 475.3333333333333 Z" fill="#c45b16" stroke="white" stroke-width="1.5"/>
+<text x="1162" y="481.3333333333333" font-size="18" text-anchor="end" fill="#18202a">0.596</text>
+<rect x="39" y="487.99999999999994" width="1122" height="25.333333333333332" fill="#f5f7f9"/>
+<text x="212" y="506.66666666666663" font-size="18" text-anchor="end" fill="#18202a">680−600 · H</text>
+<line x1="291.4923076923077" y1="500.66666666666663" x2="340.2307692307692" y2="500.66666666666663" stroke="#cbd3dc" stroke-width="11" stroke-linecap="round"/>
+<line x1="291.4923076923077" y1="493.66666666666663" x2="291.4923076923077" y2="507.66666666666663" stroke="#7f8b99" stroke-width="1.5"/>
+<line x1="340.2307692307692" y1="493.66666666666663" x2="340.2307692307692" y2="507.66666666666663" stroke="#7f8b99" stroke-width="1.5"/>
+<circle cx="321.51976923076927" cy="500.66666666666663" r="6" fill="#1f5a94" stroke="white" stroke-width="1.5"/>
+<text x="1162" y="506.66666666666663" font-size="18" text-anchor="end" fill="#18202a">-2.146</text>
+<text x="212" y="532" font-size="18" text-anchor="end" fill="#18202a">680−600 · C</text>
+<line x1="494.8230769230769" y1="526" x2="551.176923076923" y2="526" stroke="#cbd3dc" stroke-width="11" stroke-linecap="round"/>
+<line x1="494.8230769230769" y1="519" x2="494.8230769230769" y2="533" stroke="#7f8b99" stroke-width="1.5"/>
+<line x1="551.176923076923" y1="519" x2="551.176923076923" y2="533" stroke="#7f8b99" stroke-width="1.5"/>
+<path d="M 516.4050769230769 519 L 523.4050769230769 526 L 516.4050769230769 533 L 509.4050769230769 526 Z" fill="#c45b16" stroke="white" stroke-width="1.5"/>
+<text x="1162" y="532" font-size="18" text-anchor="end" fill="#18202a">0.413</text>
+<rect x="39" y="538.6666666666666" width="1122" height="25.333333333333332" fill="#f5f7f9"/>
+<text x="212" y="557.3333333333333" font-size="18" text-anchor="end" fill="#18202a">685−600 · H</text>
+<line x1="510.05384615384617" y1="551.3333333333333" x2="543.5615384615385" y2="551.3333333333333" stroke="#cbd3dc" stroke-width="11" stroke-linecap="round"/>
+<line x1="510.05384615384617" y1="544.3333333333333" x2="510.05384615384617" y2="558.3333333333333" stroke="#7f8b99" stroke-width="1.5"/>
+<line x1="543.5615384615385" y1="544.3333333333333" x2="543.5615384615385" y2="558.3333333333333" stroke="#7f8b99" stroke-width="1.5"/>
+<circle cx="526.9143076923077" cy="551.3333333333333" r="6" fill="#1f5a94" stroke="white" stroke-width="1.5"/>
+<text x="1162" y="557.3333333333333" font-size="18" text-anchor="end" fill="#18202a">0.551</text>
+<text x="212" y="582.6666666666666" font-size="18" text-anchor="end" fill="#18202a">685−600 · C</text>
+<line x1="690.5384615384614" y1="576.6666666666666" x2="736.9923076923076" y2="576.6666666666666" stroke="#cbd3dc" stroke-width="11" stroke-linecap="round"/>
+<line x1="690.5384615384614" y1="569.6666666666666" x2="690.5384615384614" y2="583.6666666666666" stroke="#7f8b99" stroke-width="1.5"/>
+<line x1="736.9923076923076" y1="569.6666666666666" x2="736.9923076923076" y2="583.6666666666666" stroke="#7f8b99" stroke-width="1.5"/>
+<path d="M 719.8576923076923 569.6666666666666 L 726.8576923076923 576.6666666666666 L 719.8576923076923 583.6666666666666 L 712.8576923076923 576.6666666666666 Z" fill="#c45b16" stroke="white" stroke-width="1.5"/>
+<text x="1162" y="582.6666666666666" font-size="18" text-anchor="end" fill="#18202a">3.085</text>
+<rect x="39" y="589.3333333333334" width="1122" height="25.333333333333332" fill="#f5f7f9"/>
+<text x="212" y="608" font-size="18" text-anchor="end" fill="#18202a">695−685 · H</text>
+<line x1="303.67692307692306" y1="602" x2="337.18461538461537" y2="602" stroke="#cbd3dc" stroke-width="11" stroke-linecap="round"/>
+<line x1="303.67692307692306" y1="595" x2="303.67692307692306" y2="609" stroke="#7f8b99" stroke-width="1.5"/>
+<line x1="337.18461538461537" y1="595" x2="337.18461538461537" y2="609" stroke="#7f8b99" stroke-width="1.5"/>
+<circle cx="326.9038461538462" cy="602" r="6" fill="#1f5a94" stroke="white" stroke-width="1.5"/>
+<text x="1162" y="608" font-size="18" text-anchor="end" fill="#18202a">-2.075</text>
+<text x="212" y="633.3333333333333" font-size="18" text-anchor="end" fill="#18202a">695−685 · C</text>
+<line x1="468.9307692307692" y1="627.3333333333333" x2="518.4307692307692" y2="627.3333333333333" stroke="#cbd3dc" stroke-width="11" stroke-linecap="round"/>
+<line x1="468.9307692307692" y1="620.3333333333333" x2="468.9307692307692" y2="634.3333333333333" stroke="#7f8b99" stroke-width="1.5"/>
+<line x1="518.4307692307692" y1="620.3333333333333" x2="518.4307692307692" y2="634.3333333333333" stroke="#7f8b99" stroke-width="1.5"/>
+<path d="M 488.70030769230766 620.3333333333333 L 495.70030769230766 627.3333333333333 L 488.70030769230766 634.3333333333333 L 481.70030769230766 627.3333333333333 Z" fill="#c45b16" stroke="white" stroke-width="1.5"/>
+<text x="1162" y="633.3333333333333" font-size="18" text-anchor="end" fill="#18202a">0.050</text>
+<rect x="38" y="735" width="1124" height="650" rx="8" fill="#fbfcfd" stroke="#aeb7c2"/>
+<text x="56" y="765" font-size="23" font-weight="700" fill="#18202a">(b) High-mass annual heating and cooling</text>
+<text x="1162" y="765" font-size="19" font-weight="700" text-anchor="end" fill="#1b6b3a">19/19 pass; minimum 17</text>
+<text x="226" y="788" font-size="16" fill="#59636f">Annual load or case difference (MWh)</text>
+<text x="1162" y="788" font-size="16" text-anchor="end" fill="#59636f">WASM result</text>
+<line x1="256.46153846153845" y1="793" x2="256.46153846153845" y2="1345" stroke="#e7eaee" stroke-width="1" />
+<text x="256.46153846153845" y="1369" font-size="17" text-anchor="middle" fill="#59636f">-3</text>
+<line x1="484.9230769230769" y1="793" x2="484.9230769230769" y2="1345" stroke="#aab2bc" stroke-width="1.5" stroke-dasharray="5 4"/>
+<text x="484.9230769230769" y="1369" font-size="17" text-anchor="middle" fill="#59636f">0</text>
+<line x1="713.3846153846155" y1="793" x2="713.3846153846155" y2="1345" stroke="#e7eaee" stroke-width="1" />
+<text x="713.3846153846155" y="1369" font-size="17" text-anchor="middle" fill="#59636f">3</text>
+<line x1="941.8461538461538" y1="793" x2="941.8461538461538" y2="1345" stroke="#e7eaee" stroke-width="1" />
+<text x="941.8461538461538" y="1369" font-size="17" text-anchor="middle" fill="#59636f">6</text>
+<text x="212" y="823" font-size="18" text-anchor="end" fill="#18202a">900 · H</text>
+<line x1="564.1230769230768" y1="817" x2="658.553846153846" y2="817" stroke="#cbd3dc" stroke-width="11" stroke-linecap="round"/>
+<line x1="564.1230769230768" y1="810" x2="564.1230769230768" y2="824" stroke="#7f8b99" stroke-width="1.5"/>
+<line x1="658.553846153846" y1="810" x2="658.553846153846" y2="824" stroke="#7f8b99" stroke-width="1.5"/>
+<circle cx="611.4298461538461" cy="817" r="6" fill="#1f5a94" stroke="white" stroke-width="1.5"/>
+<text x="1162" y="823" font-size="18" text-anchor="end" fill="#18202a">1.661</text>
+<rect x="39" y="831" width="1122" height="28" fill="#f5f7f9"/>
+<text x="212" y="851" font-size="18" text-anchor="end" fill="#18202a">900 · C</text>
+<line x1="663.8846153846155" y1="845" x2="682.9230769230769" y2="845" stroke="#cbd3dc" stroke-width="11" stroke-linecap="round"/>
+<line x1="663.8846153846155" y1="838" x2="663.8846153846155" y2="852" stroke="#7f8b99" stroke-width="1.5"/>
+<line x1="682.9230769230769" y1="838" x2="682.9230769230769" y2="852" stroke="#7f8b99" stroke-width="1.5"/>
+<path d="M 674.7593846153845 838 L 681.7593846153845 845 L 674.7593846153845 852 L 667.7593846153845 845 Z" fill="#c45b16" stroke="white" stroke-width="1.5"/>
+<text x="1162" y="851" font-size="18" text-anchor="end" fill="#18202a">2.493</text>
+<text x="212" y="879" font-size="18" text-anchor="end" fill="#18202a">900−910 · H</text>
+<line x1="445.3230769230769" y1="873" x2="483.4" y2="873" stroke="#cbd3dc" stroke-width="11" stroke-linecap="round"/>
+<line x1="445.3230769230769" y1="866" x2="445.3230769230769" y2="880" stroke="#7f8b99" stroke-width="1.5"/>
+<line x1="483.4" y1="866" x2="483.4" y2="880" stroke="#7f8b99" stroke-width="1.5"/>
+<circle cx="462.71661538461535" cy="873" r="6" fill="#1f5a94" stroke="white" stroke-width="1.5"/>
+<text x="1162" y="879" font-size="18" text-anchor="end" fill="#18202a">-0.292</text>
+<rect x="39" y="887" width="1122" height="28" fill="#f5f7f9"/>
+<text x="212" y="907" font-size="18" text-anchor="end" fill="#18202a">900−910 · C</text>
+<line x1="511.5769230769231" y1="901" x2="617.4307692307692" y2="901" stroke="#cbd3dc" stroke-width="11" stroke-linecap="round"/>
+<line x1="511.5769230769231" y1="894" x2="511.5769230769231" y2="908" stroke="#7f8b99" stroke-width="1.5"/>
+<line x1="617.4307692307692" y1="894" x2="617.4307692307692" y2="908" stroke="#7f8b99" stroke-width="1.5"/>
+<path d="M 569.2025384615384 894 L 576.2025384615384 901 L 569.2025384615384 908 L 562.2025384615384 901 Z" fill="#c45b16" stroke="white" stroke-width="1.5"/>
+<text x="1162" y="907" font-size="18" text-anchor="end" fill="#18202a">1.107</text>
+<text x="212" y="935" font-size="18" text-anchor="end" fill="#18202a">920−900 · H</text>
+<line x1="599.9153846153846" y1="929" x2="631.1384615384616" y2="929" stroke="#cbd3dc" stroke-width="11" stroke-linecap="round"/>
+<line x1="599.9153846153846" y1="922" x2="599.9153846153846" y2="936" stroke="#7f8b99" stroke-width="1.5"/>
+<line x1="631.1384615384616" y1="922" x2="631.1384615384616" y2="936" stroke="#7f8b99" stroke-width="1.5"/>
+<circle cx="612.1228461538461" cy="929" r="6" fill="#1f5a94" stroke="white" stroke-width="1.5"/>
+<text x="1162" y="935" font-size="18" text-anchor="end" fill="#18202a">1.670</text>
+<rect x="39" y="943" width="1122" height="28" fill="#f5f7f9"/>
+<text x="212" y="963" font-size="18" text-anchor="end" fill="#18202a">920−900 · C</text>
+<line x1="491.0153846153846" y1="957" x2="521.476923076923" y2="957" stroke="#cbd3dc" stroke-width="11" stroke-linecap="round"/>
+<line x1="491.0153846153846" y1="950" x2="491.0153846153846" y2="964" stroke="#7f8b99" stroke-width="1.5"/>
+<line x1="521.476923076923" y1="950" x2="521.476923076923" y2="964" stroke="#7f8b99" stroke-width="1.5"/>
+<path d="M 503.2761538461538 950 L 510.2761538461538 957 L 503.2761538461538 964 L 496.2761538461538 957 Z" fill="#c45b16" stroke="white" stroke-width="1.5"/>
+<text x="1162" y="963" font-size="18" text-anchor="end" fill="#18202a">0.241</text>
+<text x="212" y="991" font-size="18" text-anchor="end" fill="#18202a">930−920 · H</text>
+<line x1="500.15384615384613" y1="985" x2="572.5" y2="985" stroke="#cbd3dc" stroke-width="11" stroke-linecap="round"/>
+<line x1="500.15384615384613" y1="978" x2="500.15384615384613" y2="992" stroke="#7f8b99" stroke-width="1.5"/>
+<line x1="572.5" y1="978" x2="572.5" y2="992" stroke="#7f8b99" stroke-width="1.5"/>
+<circle cx="534.9485384615384" cy="985" r="6" fill="#1f5a94" stroke="white" stroke-width="1.5"/>
+<text x="1162" y="991" font-size="18" text-anchor="end" fill="#18202a">0.657</text>
+<rect x="39" y="999" width="1122" height="28" fill="#f5f7f9"/>
+<text x="212" y="1019" font-size="18" text-anchor="end" fill="#18202a">930−920 · C</text>
+<line x1="394.29999999999995" y1="1013" x2="451.4153846153846" y2="1013" stroke="#cbd3dc" stroke-width="11" stroke-linecap="round"/>
+<line x1="394.29999999999995" y1="1006" x2="394.29999999999995" y2="1020" stroke="#7f8b99" stroke-width="1.5"/>
+<line x1="451.4153846153846" y1="1006" x2="451.4153846153846" y2="1020" stroke="#7f8b99" stroke-width="1.5"/>
+<path d="M 423.0633076923077 1006 L 430.0633076923077 1013 L 423.0633076923077 1020 L 416.0633076923077 1013 Z" fill="#c45b16" stroke="white" stroke-width="1.5"/>
+<text x="1162" y="1019" font-size="18" text-anchor="end" fill="#18202a">-0.812</text>
+<text x="212" y="1047" font-size="18" text-anchor="end" fill="#18202a">940−900 · H</text>
+<line x1="422.4769230769231" y1="1041" x2="456.7461538461538" y2="1041" stroke="#cbd3dc" stroke-width="11" stroke-linecap="round"/>
+<line x1="422.4769230769231" y1="1034" x2="422.4769230769231" y2="1048" stroke="#7f8b99" stroke-width="1.5"/>
+<line x1="456.7461538461538" y1="1034" x2="456.7461538461538" y2="1048" stroke="#7f8b99" stroke-width="1.5"/>
+<circle cx="439.45923076923077" cy="1041" r="6" fill="#1f5a94" stroke="white" stroke-width="1.5"/>
+<text x="1162" y="1047" font-size="18" text-anchor="end" fill="#18202a">-0.597</text>
+<rect x="39" y="1055" width="1122" height="28" fill="#f5f7f9"/>
+<text x="212" y="1075" font-size="18" text-anchor="end" fill="#18202a">940−900 · C</text>
+<line x1="470.45384615384614" y1="1069" x2="489.4923076923077" y2="1069" stroke="#cbd3dc" stroke-width="11" stroke-linecap="round"/>
+<line x1="470.45384615384614" y1="1062" x2="470.45384615384614" y2="1076" stroke="#7f8b99" stroke-width="1.5"/>
+<line x1="489.4923076923077" y1="1062" x2="489.4923076923077" y2="1076" stroke="#7f8b99" stroke-width="1.5"/>
+<path d="M 479.9959230769231 1062 L 486.9959230769231 1069 L 479.9959230769231 1076 L 472.9959230769231 1069 Z" fill="#c45b16" stroke="white" stroke-width="1.5"/>
+<text x="1162" y="1075" font-size="18" text-anchor="end" fill="#18202a">-0.065</text>
+<text x="212" y="1103" font-size="18" text-anchor="end" fill="#18202a">950−900 · C</text>
+<line x1="332.61538461538464" y1="1097" x2="366.12307692307695" y2="1097" stroke="#cbd3dc" stroke-width="11" stroke-linecap="round"/>
+<line x1="332.61538461538464" y1="1090" x2="332.61538461538464" y2="1104" stroke="#7f8b99" stroke-width="1.5"/>
+<line x1="366.12307692307695" y1="1090" x2="366.12307692307695" y2="1104" stroke="#7f8b99" stroke-width="1.5"/>
+<path d="M 347.968 1090 L 354.968 1097 L 347.968 1104 L 340.968 1097 Z" fill="#c45b16" stroke="white" stroke-width="1.5"/>
+<text x="1162" y="1103" font-size="18" text-anchor="end" fill="#18202a">-1.798</text>
+<rect x="39" y="1111" width="1122" height="28" fill="#f5f7f9"/>
+<text x="212" y="1131" font-size="18" text-anchor="end" fill="#18202a">960−900 · H</text>
+<line x1="558.0307692307692" y1="1125" x2="570.2153846153847" y2="1125" stroke="#cbd3dc" stroke-width="11" stroke-linecap="round"/>
+<line x1="558.0307692307692" y1="1118" x2="558.0307692307692" y2="1132" stroke="#7f8b99" stroke-width="1.5"/>
+<line x1="570.2153846153847" y1="1118" x2="570.2153846153847" y2="1132" stroke="#7f8b99" stroke-width="1.5"/>
+<circle cx="564.145923076923" cy="1125" r="6" fill="#1f5a94" stroke="white" stroke-width="1.5"/>
+<text x="1162" y="1131" font-size="18" text-anchor="end" fill="#18202a">1.040</text>
+<text x="212" y="1159" font-size="18" text-anchor="end" fill="#18202a">960−900 · C</text>
+<line x1="347.0846153846154" y1="1153" x2="388.2076923076923" y2="1153" stroke="#cbd3dc" stroke-width="11" stroke-linecap="round"/>
+<line x1="347.0846153846154" y1="1146" x2="347.0846153846154" y2="1160" stroke="#7f8b99" stroke-width="1.5"/>
+<line x1="388.2076923076923" y1="1146" x2="388.2076923076923" y2="1160" stroke="#7f8b99" stroke-width="1.5"/>
+<path d="M 363.808 1146 L 370.808 1153 L 363.808 1160 L 356.808 1153 Z" fill="#c45b16" stroke="white" stroke-width="1.5"/>
+<text x="1162" y="1159" font-size="18" text-anchor="end" fill="#18202a">-1.590</text>
+<rect x="39" y="1167" width="1122" height="28" fill="#f5f7f9"/>
+<text x="212" y="1187" font-size="18" text-anchor="end" fill="#18202a">980−900 · H</text>
+<line x1="359.2692307692307" y1="1181" x2="408.7692307692307" y2="1181" stroke="#cbd3dc" stroke-width="11" stroke-linecap="round"/>
+<line x1="359.2692307692307" y1="1174" x2="359.2692307692307" y2="1188" stroke="#7f8b99" stroke-width="1.5"/>
+<line x1="408.7692307692307" y1="1174" x2="408.7692307692307" y2="1188" stroke="#7f8b99" stroke-width="1.5"/>
+<circle cx="389.3423846153846" cy="1181" r="6" fill="#1f5a94" stroke="white" stroke-width="1.5"/>
+<text x="1162" y="1187" font-size="18" text-anchor="end" fill="#18202a">-1.255</text>
+<text x="212" y="1215" font-size="18" text-anchor="end" fill="#18202a">980−900 · C</text>
+<line x1="567.9307692307693" y1="1209" x2="592.3" y2="1209" stroke="#cbd3dc" stroke-width="11" stroke-linecap="round"/>
+<line x1="567.9307692307693" y1="1202" x2="567.9307692307693" y2="1216" stroke="#7f8b99" stroke-width="1.5"/>
+<line x1="592.3" y1="1202" x2="592.3" y2="1216" stroke="#7f8b99" stroke-width="1.5"/>
+<path d="M 578.8893076923077 1202 L 585.8893076923077 1209 L 578.8893076923077 1216 L 571.8893076923077 1209 Z" fill="#c45b16" stroke="white" stroke-width="1.5"/>
+<text x="1162" y="1215" font-size="18" text-anchor="end" fill="#18202a">1.234</text>
+<rect x="39" y="1223" width="1122" height="28" fill="#f5f7f9"/>
+<text x="212" y="1243" font-size="18" text-anchor="end" fill="#18202a">985−900 · H</text>
+<line x1="533.6615384615384" y1="1237" x2="546.6076923076923" y2="1237" stroke="#cbd3dc" stroke-width="11" stroke-linecap="round"/>
+<line x1="533.6615384615384" y1="1230" x2="533.6615384615384" y2="1244" stroke="#7f8b99" stroke-width="1.5"/>
+<line x1="546.6076923076923" y1="1230" x2="546.6076923076923" y2="1244" stroke="#7f8b99" stroke-width="1.5"/>
+<circle cx="538.680076923077" cy="1237" r="6" fill="#1f5a94" stroke="white" stroke-width="1.5"/>
+<text x="1162" y="1243" font-size="18" text-anchor="end" fill="#18202a">0.706</text>
+<text x="212" y="1271" font-size="18" text-anchor="end" fill="#18202a">985−900 · C</text>
+<line x1="752.9846153846154" y1="1265" x2="803.2461538461538" y2="1265" stroke="#cbd3dc" stroke-width="11" stroke-linecap="round"/>
+<line x1="752.9846153846154" y1="1258" x2="752.9846153846154" y2="1272" stroke="#7f8b99" stroke-width="1.5"/>
+<line x1="803.2461538461538" y1="1258" x2="803.2461538461538" y2="1272" stroke="#7f8b99" stroke-width="1.5"/>
+<path d="M 779.7526923076923 1258 L 786.7526923076923 1265 L 779.7526923076923 1272 L 772.7526923076923 1265 Z" fill="#c45b16" stroke="white" stroke-width="1.5"/>
+<text x="1162" y="1271" font-size="18" text-anchor="end" fill="#18202a">3.872</text>
+<rect x="39" y="1279" width="1122" height="28" fill="#f5f7f9"/>
+<text x="212" y="1299" font-size="18" text-anchor="end" fill="#18202a">995−985 · H</text>
+<line x1="345.5615384615385" y1="1293" x2="403.4384615384615" y2="1293" stroke="#cbd3dc" stroke-width="11" stroke-linecap="round"/>
+<line x1="345.5615384615385" y1="1286" x2="345.5615384615385" y2="1300" stroke="#7f8b99" stroke-width="1.5"/>
+<line x1="403.4384615384615" y1="1286" x2="403.4384615384615" y2="1300" stroke="#7f8b99" stroke-width="1.5"/>
+<circle cx="380.79030769230764" cy="1293" r="6" fill="#1f5a94" stroke="white" stroke-width="1.5"/>
+<text x="1162" y="1299" font-size="18" text-anchor="end" fill="#18202a">-1.367</text>
+<text x="212" y="1327" font-size="18" text-anchor="end" fill="#18202a">995−985 · C</text>
+<line x1="532.9000000000001" y1="1321" x2="572.5" y2="1321" stroke="#cbd3dc" stroke-width="11" stroke-linecap="round"/>
+<line x1="532.9000000000001" y1="1314" x2="532.9000000000001" y2="1328" stroke="#7f8b99" stroke-width="1.5"/>
+<line x1="572.5" y1="1314" x2="572.5" y2="1328" stroke="#7f8b99" stroke-width="1.5"/>
+<path d="M 549.5548461538461 1314 L 556.5548461538461 1321 L 549.5548461538461 1328 L 542.5548461538461 1321 Z" fill="#c45b16" stroke="white" stroke-width="1.5"/>
+<text x="1162" y="1327" font-size="18" text-anchor="end" fill="#18202a">0.849</text>
+<line x1="50" y1="1422" x2="98" y2="1422" stroke="#cbd3dc" stroke-width="11" stroke-linecap="round"/>
+<text x="110" y="1428" font-size="18" fill="#18202a">ASHRAE 140-2023 inclusive acceptance range</text>
+<circle cx="520" cy="1422" r="6" fill="#1f5a94"/>
+<text x="534" y="1428" font-size="18" fill="#18202a">heating</text>
+<path d="M 650 1415 L 657 1422 L 650 1429 L 643 1422 Z" fill="#c45b16"/>
+<text x="666" y="1428" font-size="18" fill="#18202a">cooling</text>
+<text x="1180" y="1428" font-size="17" text-anchor="end" fill="#59636f">H/C = annual heating/cooling</text>
+</svg>

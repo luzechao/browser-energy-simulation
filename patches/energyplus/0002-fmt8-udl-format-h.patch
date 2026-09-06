@@ -1,0 +1,38 @@
+From: radiance-web EnergyPlus WASM port
+Subject: [PATCH 2/5] third_party/fmt-8.0.1: de-space user-defined-literal operators
+
+What: `operator"" _a` -> `operator""_a` and `operator"" _format` -> `operator""_format`
+(4 sites total: 2 in format.h, 2 in xchar.h; this file covers format.h's 2 sites,
+see 0003 for xchar.h's 2 sites).
+
+Why (toolchain, not physics): a space between the `""` and the literal-operator
+suffix was legal but deprecated C++11/14 syntax for user-defined-literal
+declarators. clang >= 23 (Emscripten's bundled compiler) promotes the
+deprecation to a hard error under fmt 8.0.1's warning/pedantic settings. This is
+a tokenization-only change in the declarator spelling -- the operator's name,
+signature, and runtime behavior are unchanged.
+
+Applies to: energyplus-src/third_party/fmt-8.0.1/include/fmt/format.h
+Apply with (-p1, from the pristine energyplus-src/ tree root):
+  patch -p1 < patches/energyplus/0002-fmt8-udl-format-h.patch
+
+--- a/third_party/fmt-8.0.1/include/fmt/format.h
++++ b/third_party/fmt-8.0.1/include/fmt/format.h
+@@ -2867,7 +2867,7 @@
+   return {};
+ }
+ #  else
+-constexpr auto operator"" _a(const char* s, size_t) -> detail::udl_arg<char> {
++constexpr auto operator""_a(const char* s, size_t) -> detail::udl_arg<char> {
+   return {s};
+ }
+ #  endif
+@@ -2882,7 +2882,7 @@
+     std::string message = "The answer is {}"_format(42);
+   \endrst
+  */
+-constexpr auto operator"" _format(const char* s, size_t n)
++constexpr auto operator""_format(const char* s, size_t n)
+     -> detail::udl_formatter<char> {
+   return {{s, n}};
+ }
