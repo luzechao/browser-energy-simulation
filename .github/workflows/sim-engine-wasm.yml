@@ -2,7 +2,9 @@ name: sim-engine-wasm
 
 # Builds EnergyPlus as a Pyodide side module from source, tests it, and packs @luzechao/sim-engine-wasm.
 # Pushing a tag sim-engine-wasm-v<version> (equal to packages/sim-engine-wasm/package.json "version") also
-# publishes the package to npm.
+# attaches the tarball to a GitHub Release, installable as
+#   npm install https://github.com/luzechao/browser-energy-simulation/releases/download/<tag>/luzechao-sim-engine-wasm-<version>.tgz
+# and, when the repository variable NPM_PUBLISH is "true", publishes it to npm.
 #
 # npm authentication, either:
 #  - trusted publishing: on npmjs.com, package settings -> Trusted Publisher -> GitHub Actions, repository
@@ -16,7 +18,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write # GitHub Release
   id-token: write # npm provenance and trusted publishing
 
 jobs:
@@ -74,15 +76,34 @@ jobs:
           name: sim-engine-wasm
           path: packages/sim-engine-wasm/*.tgz
 
-      - name: Publish to npm
+      - name: Check the tag matches the package version
         if: startsWith(github.ref, 'refs/tags/sim-engine-wasm-v')
         working-directory: packages/sim-engine-wasm
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
           version="$(node -p 'require("./package.json").version')"
           if [ "${GITHUB_REF_NAME}" != "sim-engine-wasm-v${version}" ]; then
             echo "Tag ${GITHUB_REF_NAME} does not match package version ${version}" >&2
             exit 1
           fi
-          npm publish ./*.tgz --provenance --access public
+
+      - name: GitHub Release
+        if: startsWith(github.ref, 'refs/tags/sim-engine-wasm-v')
+        working-directory: packages/sim-engine-wasm
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          tarball="$(ls ./*.tgz)"
+          sha="$(sha256sum "$tarball" | cut -d' ' -f1)"
+          notes="EnergyPlus version 26.1.0 software as a Pyodide 314 side module, built from source by this workflow (run ${GITHUB_RUN_ID}, commit ${GITHUB_SHA}).
+
+          Install: \`npm install https://github.com/${GITHUB_REPOSITORY}/releases/download/${GITHUB_REF_NAME}/$(basename "$tarball")\`
+
+          SHA-256 \`${sha}\`. See packages/sim-engine-wasm/README.md and NOTICE."
+          gh release create "${GITHUB_REF_NAME}" "$tarball" --title "@luzechao/sim-engine-wasm ${GITHUB_REF_NAME#sim-engine-wasm-v}" --notes "$notes"
+
+      - name: Publish to npm
+        if: startsWith(github.ref, 'refs/tags/sim-engine-wasm-v') && vars.NPM_PUBLISH == 'true'
+        working-directory: packages/sim-engine-wasm
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npm publish ./*.tgz --provenance --access public

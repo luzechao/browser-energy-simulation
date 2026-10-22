@@ -13,6 +13,12 @@ of the same EnergyPlus release use the patch number (26.1.1, 26.1.2, ...).
 npm install @luzechao/sim-engine-wasm pyodide@314.0.7
 ```
 
+Until the package is on the npm registry, install the CI-built tarball from the GitHub Release instead:
+
+```sh
+npm install https://github.com/luzechao/browser-energy-simulation/releases/download/sim-engine-wasm-v26.1.0/luzechao-sim-engine-wasm-26.1.0.tgz pyodide@314.0.7
+```
+
 `pyodide` is a peer dependency, and any 314.0.x works. The engine is a Pyodide side module, so it only loads into
 the Pyodide ABI it was built for.
 

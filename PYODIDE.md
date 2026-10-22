@@ -113,7 +113,9 @@ into the module.
 
 [.github/workflows/sim-engine-wasm.yml](.github/workflows/sim-engine-wasm.yml) builds everything from source on
 Ubuntu, runs the gate and the package tests, and uploads the package tarball as an artifact. Pushing a tag
-`sim-engine-wasm-v<version>` (matching `package.json`) also publishes it to npm.
+`sim-engine-wasm-v<version>` (matching `package.json`) also attaches the tarball to a GitHub Release, where npm can
+install it from its URL. When the repository variable `NPM_PUBLISH` is `true`, the same run publishes it to npm,
+using either an `NPM_TOKEN` secret or npm trusted publishing.
 
 ## Notes and limits
 
