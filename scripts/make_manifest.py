@@ -2,7 +2,8 @@
 from pathlib import Path
 import hashlib
 root = Path(__file__).resolve().parents[1]
-excluded = {'.git', 'node_modules', 'build', 'emsdk', 'energyplus-build', 'verification-runs', '__pycache__'}
+excluded = {'.git', 'node_modules', 'build', 'emsdk', 'emsdk-pyodide', 'energyplus-build', 'energyplus-pyodide',
+            'third_party', 'verification-runs', '__pycache__'}
 files = sorted(p for p in root.rglob('*') if p.is_file() and not p.is_symlink()
                and not excluded.intersection(p.relative_to(root).parts)
                and p.name != 'MANIFEST.sha256' and not p.name.endswith(('.zip', '.pyc')))

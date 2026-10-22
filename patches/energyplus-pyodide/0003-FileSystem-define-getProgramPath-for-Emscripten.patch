@@ -1,0 +1,35 @@
+From 49db20dac7c562783321916a5b28ac7082226670 Mon Sep 17 00:00:00 2001
+From: browser-energy-simulation <noreply@localhost>
+Date: Thu, 22 Oct 2026 14:02:40 -0600
+Subject: [PATCH 3/4] FileSystem: define getProgramPath for Emscripten
+
+No branch matched __EMSCRIPTEN__, so the function returned an uninitialized buffer. Report /energyplus at the root of the virtual file system.
+---
+ src/EnergyPlus/FileSystem.cc | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git a/src/EnergyPlus/FileSystem.cc b/src/EnergyPlus/FileSystem.cc
+index 8b74c53..910bdfb 100644
+--- a/src/EnergyPlus/FileSystem.cc
++++ b/src/EnergyPlus/FileSystem.cc
+@@ -49,6 +49,7 @@
+ #include <cerrno>
+ #include <cstdio>
+ #include <cstdlib>
++#include <cstring>
+ #include <fstream>
+ #include <iostream>
+ #include <sys/stat.h>
+@@ -222,6 +223,9 @@ namespace FileSystem {
+         }
+ #elif _WIN32
+         GetModuleFileName(NULL, executableRelativePath, sizeof(executableRelativePath));
++#elif defined(__EMSCRIPTEN__)
++        // There is no executable on disk; report a fixed location at the root of the virtual file system.
++        std::strncpy(executableRelativePath, "/energyplus", sizeof(executableRelativePath));
+ #endif
+ 
+         return executableRelativePath;
+-- 
+2.54.0 (Apple Git-157)
+

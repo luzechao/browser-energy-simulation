@@ -1,0 +1,61 @@
+From b26e9e81672f6ad186e85fe02248d8ce2ca32fc2 Mon Sep 17 00:00:00 2001
+From: browser-energy-simulation <noreply@localhost>
+Date: Thu, 22 Oct 2026 14:02:40 -0600
+Subject: [PATCH 1/4] cmake: build libenergyplusapi.so as a Pyodide side module
+
+Under EMSCRIPTEN with LINK_WITH_PYTHON, add the energyplusapi_pyodide target: the static energyplusapi archive linked whole into an Emscripten SIDE_MODULE named libenergyplusapi.so, with energyplusapi_EXPORTS defined so ENERGYPLUSLIB_API keeps the C API visible under -fvisibility=hidden. Skip copying the host Python standard library; Pyodide ships its own.
+---
+ src/EnergyPlus/CMakeLists.txt | 30 ++++++++++++++++++++++++------
+ 1 file changed, 24 insertions(+), 6 deletions(-)
+
+diff --git a/src/EnergyPlus/CMakeLists.txt b/src/EnergyPlus/CMakeLists.txt
+index 7d412c8..81fb07f 100644
+--- a/src/EnergyPlus/CMakeLists.txt
++++ b/src/EnergyPlus/CMakeLists.txt
+@@ -902,6 +902,22 @@ add_custom_target(setup_pyapi
+ # which will ensure it's run (beforehand, at **build** not configure time)
+ add_dependencies(energyplus setup_pyapi)
+ 
++if(EMSCRIPTEN AND LINK_WITH_PYTHON)
++  # Pyodide build: a dynamically loadable libenergyplusapi.so (an Emscripten SIDE_MODULE) that pyenergyplus loads
++  # with ctypes inside Pyodide. Python C API symbols are left undefined and resolved against Pyodide's main module
++  # at load time, so the interpreter running the PythonPlugin code is Pyodide's own.
++  set(PYODIDE_SIDE_MODULE_STUB "${CMAKE_CURRENT_BINARY_DIR}/pyodide_side_module_stub.cc")
++  file(WRITE "${PYODIDE_SIDE_MODULE_STUB}" "// intentionally empty: all code comes from the whole-archive energyplusapi\n")
++  add_executable(energyplusapi_pyodide "${PYODIDE_SIDE_MODULE_STUB}")
++  target_link_libraries(energyplusapi_pyodide PRIVATE "$<LINK_LIBRARY:WHOLE_ARCHIVE,energyplusapi>")
++  target_link_options(energyplusapi_pyodide PRIVATE -sSIDE_MODULE=1)
++  set_target_properties(energyplusapi_pyodide PROPERTIES OUTPUT_NAME energyplusapi PREFIX lib SUFFIX .so)
++  add_dependencies(energyplusapi_pyodide setup_pyapi)
++  # energyplusapi is built STATIC here, so CMake does not define energyplusapi_EXPORTS; without it ENERGYPLUSLIB_API
++  # expands to nothing, -fvisibility=hidden applies, and the linker drops the whole C API from the side module.
++  target_compile_definitions(energyplusapi PRIVATE energyplusapi_EXPORTS)
++endif()
++
+ if(NOT BUILD_STATIC_ENERGYPLUS_API)
+   install(
+     TARGETS energyplusapi energyplus
+@@ -1005,12 +1021,14 @@ if(LINK_WITH_PYTHON)
+         -P \"${PROJECT_SOURCE_DIR}/cmake/PythonFixUpOnMac.cmake\"
+       )")
+   endif()
+-  # along with the python standard lib
+-  add_custom_command(
+-    TARGET energyplusapi
+-    POST_BUILD # TODO: I don't think we want to quote the generator expression
+-    COMMAND ${Python_EXECUTABLE} "${PROJECT_SOURCE_DIR}/cmake/PythonCopyStandardLib.py" "$<TARGET_FILE:energyplusapi>" "python_lib"
+-  )
++  # along with the python standard lib (not for Emscripten, where the host interpreter, e.g. Pyodide, ships its own)
++  if(NOT EMSCRIPTEN)
++    add_custom_command(
++      TARGET energyplusapi
++      POST_BUILD # TODO: I don't think we want to quote the generator expression
++      COMMAND ${Python_EXECUTABLE} "${PROJECT_SOURCE_DIR}/cmake/PythonCopyStandardLib.py" "$<TARGET_FILE:energyplusapi>" "python_lib"
++    )
++  endif()
+   if (PYTHON_CLI)
+     add_custom_command(
+       TARGET energyplusapi
+-- 
+2.54.0 (Apple Git-157)
+

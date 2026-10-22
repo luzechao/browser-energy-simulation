@@ -95,9 +95,9 @@ emcmake cmake -S "${SOURCE_DIR}" -B "${BUILD_DIR}" \
 # Products/energyplus.js-26.1.wasm (31 MB). Full build takes on the order of
 # tens of minutes; NOT run by default — pass --build to actually run it.
 if [[ "${DO_BUILD}" -eq 1 ]]; then
-  cmake --build "${BUILD_DIR}" --target energyplus -j"$(nproc)"
+  cmake --build "${BUILD_DIR}" --target energyplus -j"$(getconf _NPROCESSORS_ONLN)"
 else
   echo "Configured only (pass --build as the first argument to also build; this step takes a long time)."
   echo "Equivalent manual build command:"
-  echo "  cmake --build '${BUILD_DIR}' --target energyplus -j\$(nproc)"
+  echo "  cmake --build '${BUILD_DIR}' --target energyplus -j\$(getconf _NPROCESSORS_ONLN)"
 fi

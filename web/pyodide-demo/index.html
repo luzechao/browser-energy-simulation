@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>EnergyPlus + PythonPlugin in the browser (Pyodide)</title>
+  <style>
+    body { font: 14px/1.4 system-ui, sans-serif; margin: 2rem auto; max-width: 960px; padding: 0 1rem; }
+    fieldset { margin-bottom: 1rem; }
+    label { display: block; margin: .3rem 0; }
+    pre { background: #111; color: #ddd; padding: .75rem; max-height: 22rem; overflow: auto; white-space: pre-wrap; }
+    #outputs a { margin-right: .75rem; }
+    .muted { color: #666; }
+  </style>
+</head>
+<body>
+  <h1>EnergyPlus 26.1 with PythonPlugin, in the browser</h1>
+  <p class="muted">EnergyPlus is a WebAssembly side module loaded into Pyodide; <code>PythonPlugin:Instance</code>
+    classes run in Pyodide's interpreter. Leave the inputs empty to run EnergyPlus's
+    <code>PythonPluginCustomOutputVariable</code> example (5 zones, Chicago design days).</p>
+
+  <fieldset>
+    <legend>Inputs</legend>
+    <label>Model (IDF / epJSON) <input type="file" id="idf" accept=".idf,.epJSON,.epjson"></label>
+    <label>Weather (EPW) <input type="file" id="epw" accept=".epw"></label>
+    <label>Plugin modules and other run files <input type="file" id="extra" multiple></label>
+    <label>Pyodide packages to load first (comma separated, e.g. numpy) <input type="text" id="packages"></label>
+    <button id="run" disabled>Loading…</button>
+  </fieldset>
+
+  <p id="status">Starting worker…</p>
+  <div id="outputs"></div>
+  <h3>eplusout.err</h3>
+  <pre id="err"></pre>
+  <h3>Console</h3>
+  <pre id="log"></pre>
+
+  <script type="module">
+    const $ = (id) => document.getElementById(id);
+    const worker = new Worker(new URL('./worker.mjs' + location.search, import.meta.url), { type: 'module' });
+    const log = (line) => { $('log').textContent += line + '\n'; $('log').scrollTop = 1e9; };
+    const readFile = async (input) => input.files[0] ? new Uint8Array(await input.files[0].arrayBuffer()) : undefined;
+    const fetchBytes = async (url) => new Uint8Array(await (await fetch(url)).arrayBuffer());
+
+    let pending = null;
+    worker.onmessage = ({ data }) => {
+      if (data.type === 'stdout') return log(data.line);
+      if (data.type === 'ready') {
+        $('status').textContent = `Pyodide ${data.pyodideVersion}, EnergyPlus API ${data.apiVersion} loaded in ${data.seconds.toFixed(1)} s.`;
+        $('run').disabled = false;
+        $('run').textContent = 'Run simulation';
+        return;
+      }
+      if (data.type === 'error') {
+        $('status').textContent = 'Error — see console.';
+        log(data.message);
+        $('run').disabled = false;
+      }
+      const resolve = pending;
+      pending = null;
+      resolve?.(data);
+    };
+    worker.postMessage({ type: 'init' });
+
+    const call = (message) => new Promise((resolve) => { pending = resolve; worker.postMessage(message); });
+
+    $('run').onclick = async () => {
+      $('run').disabled = true;
+      $('outputs').textContent = '';
+      $('err').textContent = '';
+      const packages = $('packages').value.split(',').map((s) => s.trim()).filter(Boolean);
+      if (packages.length) {
+        $('status').textContent = `Loading ${packages.join(', ')}…`;
+        if ((await call({ type: 'loadPackages', packages })).type === 'error') return;
+      }
+
+      const request = { files: {} };
+      if ($('idf').files[0]) {
+        request.idf = await readFile($('idf'));
+        request.inputName = $('idf').files[0].name.toLowerCase().endsWith('.epjson') ? 'in.epJSON' : 'in.idf';
+        request.epw = await readFile($('epw'));
+        for (const file of $('extra').files) request.files[file.name] = new Uint8Array(await file.arrayBuffer());
+      } else {
+        const testfiles = '../../energyplus-pyodide/testfiles/';
+        request.idf = await fetchBytes(testfiles + 'PythonPluginCustomOutputVariable.idf');
+        request.files['PythonPluginCustomOutputVariable.py'] = await fetchBytes(testfiles + 'PythonPluginCustomOutputVariable.py');
+        request.epw = await fetchBytes('../../energyplus-src/weather/USA_IL_Chicago-OHare.Intl.AP.725300_TMY3.epw');
+      }
+
+      $('status').textContent = 'Simulating…';
+      const result = await call({ type: 'run', request });
+      if (result.type !== 'done') return;
+      const end = new TextDecoder().decode(result.outputs['eplusout.end'] ?? new Uint8Array());
+      $('status').textContent = `Exit ${result.exitCode} in ${result.seconds.toFixed(1)} s — ${end.trim()}`;
+      $('err').textContent = new TextDecoder().decode(result.outputs['eplusout.err'] ?? new Uint8Array());
+      for (const [name, bytes] of Object.entries(result.outputs)) {
+        const a = document.createElement('a');
+        a.href = URL.createObjectURL(new Blob([bytes]));
+        a.download = name;
+        a.textContent = name;
+        $('outputs').append(a);
+      }
+      $('run').disabled = false;
+    };
+  </script>
+</body>
+</html>

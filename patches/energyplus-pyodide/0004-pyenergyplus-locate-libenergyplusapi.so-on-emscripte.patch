@@ -1,0 +1,26 @@
+From 27a350331610c6a43daad85a3880acae38cdf9af Mon Sep 17 00:00:00 2001
+From: browser-energy-simulation <noreply@localhost>
+Date: Thu, 22 Oct 2026 14:02:40 -0600
+Subject: [PATCH 4/4] pyenergyplus: locate libenergyplusapi.so on emscripten
+
+sys.platform is 'emscripten' in Pyodide.
+---
+ src/EnergyPlus/api/api.py | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/src/EnergyPlus/api/api.py b/src/EnergyPlus/api/api.py
+index 73c70ae..a33cbc9 100644
+--- a/src/EnergyPlus/api/api.py
++++ b/src/EnergyPlus/api/api.py
+@@ -79,6 +79,8 @@ def api_path() -> str:
+         return os.path.join(api_dll_dir, "libenergyplusapi.so")
+     elif sys.platform.startswith("darwin"):
+         return os.path.join(api_dll_dir, "libenergyplusapi.dylib")
++    elif sys.platform == "emscripten":
++        return os.path.join(api_dll_dir, "libenergyplusapi.so")
+     else:  # assume Windows
+         return os.path.join(api_dll_dir, "EnergyPlusAPI.dll")
+ 
+-- 
+2.54.0 (Apple Git-157)
+
