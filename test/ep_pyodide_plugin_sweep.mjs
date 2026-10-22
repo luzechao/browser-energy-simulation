@@ -12,7 +12,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
-import { installEnergyPlus, runEnergyPlus } from '../src/pyodide-energyplus.mjs';
+import { installEnergyPlus, runEnergyPlus } from '../packages/sim-engine-wasm/dist/index.js';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const products = process.env.EP_PYODIDE_PRODUCTS || path.join(root, 'build/pyodide-ep/Products');
@@ -41,13 +41,13 @@ for (const model of models) {
   let status;
   try {
     const run = runEnergyPlus(pyodide, { idf, epw, files });
-    const end = (run.readOutput('eplusout.end') || '').trim();
+    const end = (run.readText('eplusout.end') || '').trim();
     const ok = run.exitCode === 0 && /Completed Successfully.* 0 Severe/.test(end);
     const expected = EXPECTED_FAILURES.has(model) ? !ok : ok;
     if (!expected) unexpected++;
     status = `${expected ? 'ok  ' : 'FAIL'} exit ${run.exitCode}; ${end.replace(/; Elapsed.*/, '') || 'no eplusout.end'}`;
     if (!expected) {
-      const err = run.readOutput('eplusout.err') || '';
+      const err = run.readText('eplusout.err') || '';
       status += '\n      ' + err.split('\n').filter((l) => /Severe|Fatal|Error|Traceback|>>>/.test(l)).slice(0, 8).join('\n      ');
     }
   } catch (error) {
@@ -69,7 +69,7 @@ if (models.includes('PythonPluginTestMathAndKill.idf')) {
     .replace('p.specific_heat(state, hum_ratio, temp)', 'p.specific_heat(state, hum_ratio)');
   const t0 = performance.now();
   const run = runEnergyPlus(pyodide, { idf, epw, files: { 'PythonPluginTestMathAndKill.py': plugin } });
-  const err = run.readOutput('eplusout.err') || '';
+  const err = run.readText('eplusout.err') || '';
   const killed = run.exitCode !== 0 && /returned 1 to indicate EnergyPlus should abort/.test(err);
   const testsFailed = /aborting|Aborting!|connects to no component/.test(err);
   const ok = killed && !testsFailed;

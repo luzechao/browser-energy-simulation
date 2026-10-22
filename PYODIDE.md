@@ -20,7 +20,8 @@ Pyodide (main module: CPython, libc, libc++, ctypes, numpy, ...)
   that started the simulation, and can import anything installed in it, such as `numpy` via
   `pyodide.loadPackage`.
 - A simulation is started with the stock Python API: `EnergyPlusAPI().runtime.run_energyplus(state, args)`.
-  [src/pyodide-energyplus.mjs](src/pyodide-energyplus.mjs) wraps this for JavaScript.
+  The npm package [packages/sim-engine-wasm](packages/sim-engine-wasm/README.md) wraps this for JavaScript and
+  TypeScript.
 - Everything must match the Pyodide release: Emscripten 5.0.3 with Pyodide's emsdk patches, `-fPIC
   -fwasm-exceptions -sSUPPORT_LONGJMP=wasm`, and CPython 3.14. Pyodide 314.0.7 is pinned throughout.
 
@@ -59,9 +60,12 @@ Use the Node that emsdk installs (`emsdk-pyodide/node/*/bin/node`) or any Node â
 a TLS-intercepting proxy sits between you and the Pyodide CDN; otherwise it can be omitted.
 
 ```sh
+(cd packages/sim-engine-wasm && npm install && npm run stage && npm run build && npm test)
 node --use-system-ca test/ep_pyodide_plugin_gate.mjs   # Aâ€“D below
 node --use-system-ca test/ep_pyodide_plugin_sweep.mjs  # all upstream PythonPlugin*.idf examples
 ```
+
+The gate, the sweep and the browser demo use the package's built `dist/`, so build the package first.
 
 `ep_pyodide_plugin_gate.mjs` runs four checks in one Pyodide session:
 
@@ -96,18 +100,20 @@ open http://127.0.0.1:8765/web/pyodide-demo/
 to run the stock plugin example, or upload an IDF/epJSON, an EPW and the plugin `.py` files. Optionally list
 Pyodide packages (e.g. `numpy`) to load first. All output files can be downloaded.
 
-From your own code:
+From your own code, use the npm package `@luzechao/sim-engine-wasm`; its
+[README](packages/sim-engine-wasm/README.md) covers installation, serving the assets and the API.
 
-```js
-import { loadPyodide } from 'pyodide';                          // 314.0.7
-import { installEnergyPlus, runEnergyPlus } from './src/pyodide-energyplus.mjs';
+## npm package and releases
 
-const pyodide = await loadPyodide();
-await installEnergyPlus(pyodide, async (name) =>                 // name: libenergyplusapi.so or pyenergyplus/*.py
-  new Uint8Array(await (await fetch(`/energyplus/${name}`)).arrayBuffer()));
-const run = runEnergyPlus(pyodide, { idf, epw, files: { 'MyPlugin.py': pluginSource } });
-console.log(run.exitCode, run.readOutput('eplusout.err'));
-```
+[packages/sim-engine-wasm](packages/sim-engine-wasm) is published to npm as `@luzechao/sim-engine-wasm`. Its
+version is the EnergyPlus version (`26.1.0`; rebuilds bump the patch number). `npm run stage` copies the built
+`libenergyplusapi.so` and `pyenergyplus/` into `assets/`, and writes `LICENSE-EnergyPlus.txt` and
+`THIRD_PARTY_NOTICES`. The notices are generated from the license files and headers of the libraries compiled
+into the module.
+
+[.github/workflows/sim-engine-wasm.yml](.github/workflows/sim-engine-wasm.yml) builds everything from source on
+Ubuntu, runs the gate and the package tests, and uploads the package tarball as an artifact. Pushing a tag
+`sim-engine-wasm-v<version>` (matching `package.json`) also publishes it to npm.
 
 ## Notes and limits
 
@@ -116,7 +122,8 @@ console.log(run.exitCode, run.readOutput('eplusout.err'));
 - **Packages.** `pyodide-core` contains no package wheels. `loadPackage` fetches them from `packageBaseUrl`, which
   the demo and the gate point at `cdn.jsdelivr.net/pyodide/v314.0.7/full/`.
 - **Re-runs.** Plugin modules are imported from each run's own directory. `runEnergyPlus` drops cached modules from
-  earlier runs, so editing a plugin and re-running picks up the change.
+  earlier runs, so editing a plugin and re-running picks up the change. Outputs stay in Pyodide's in-memory file
+  system until `dispose()` is called on the result.
 - **Not available.** Everything `PYTHON_CLI` provides (e.g. ground heat exchanger borehole field design), PixelCounting
   shading, `ExternalInterface`, and the Fortran preprocessors (ExpandObjects, Slab, Basement, EPMacro). These are
   the same gaps as the baseline build.

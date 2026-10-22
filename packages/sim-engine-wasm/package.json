@@ -1,0 +1,61 @@
+{
+  "name": "@luzechao/sim-engine-wasm",
+  "version": "26.1.0",
+  "description": "EnergyPlus version 26.1.0 software compiled to WebAssembly as a Pyodide side module, with PythonPlugin support: building energy simulation in the browser.",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "types": "./dist/index.d.ts",
+  "bin": {
+    "sim-engine-wasm-assets": "./bin/copy-assets.mjs"
+  },
+  "files": [
+    "dist",
+    "bin",
+    "assets",
+    "LICENSE",
+    "LICENSE-EnergyPlus.txt",
+    "NOTICE",
+    "THIRD_PARTY_NOTICES"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "stage": "node scripts/stage.mjs",
+    "prepack": "node scripts/stage.mjs --check && npm run build",
+    "test": "node --test test/engine.test.mjs"
+  },
+  "peerDependencies": {
+    "pyodide": ">=314.0.0 <315.0.0"
+  },
+  "devDependencies": {
+    "pyodide": "314.0.7",
+    "typescript": "^5.7.0"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "keywords": [
+    "building-energy-simulation",
+    "building-performance",
+    "webassembly",
+    "wasm",
+    "pyodide",
+    "idf"
+  ],
+  "license": "SEE LICENSE IN NOTICE",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luzechao/browser-energy-simulation.git",
+    "directory": "packages/sim-engine-wasm"
+  },
+  "homepage": "https://github.com/luzechao/browser-energy-simulation/tree/main/packages/sim-engine-wasm#readme",
+  "publishConfig": {
+    "access": "public"
+  }
+}

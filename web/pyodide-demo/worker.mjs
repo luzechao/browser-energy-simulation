@@ -1,5 +1,5 @@
 // Module worker: Pyodide + EnergyPlus side module. Simulations block, so they never run on the page's main thread.
-import { installEnergyPlus, runEnergyPlus } from '../../src/pyodide-energyplus.mjs';
+import { installEnergyPlus, runEnergyPlus } from '../../packages/sim-engine-wasm/dist/index.js';
 
 const params = new URL(self.location.href).searchParams;
 const PYODIDE_URL = params.get('pyodide') || '../../third_party/pyodide/pyodide/';
@@ -42,10 +42,8 @@ self.onmessage = async ({ data }) => {
       const t0 = performance.now();
       const run = runEnergyPlus(pyodide, data.request);
       const outputs = {};
-      for (const name of pyodide.FS.readdir(run.outputDir)) {
-        if (name === '.' || name === '..') continue;
-        outputs[name] = pyodide.FS.readFile(`${run.outputDir}/${name}`);
-      }
+      for (const name of run.files()) outputs[name] = run.readBytes(name);
+      run.dispose();
       self.postMessage({ type: 'done', exitCode: run.exitCode, seconds: (performance.now() - t0) / 1000, outputs });
     }
   } catch (error) {

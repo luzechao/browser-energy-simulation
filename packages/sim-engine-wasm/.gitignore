@@ -1,0 +1,7 @@
+# Staged by scripts/stage.mjs or built by tsc
+assets/
+dist/
+LICENSE-EnergyPlus.txt
+THIRD_PARTY_NOTICES
+node_modules/
+*.tgz

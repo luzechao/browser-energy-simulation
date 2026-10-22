@@ -1,0 +1,34 @@
+NOTICE
+======
+
+@luzechao/sim-engine-wasm
+
+This package bundles, in WebAssembly form, EnergyPlus version 26.1.0 software and files derived from it:
+
+  assets/libenergyplusapi.so   EnergyPlus version 26.1.0 software, compiled with Emscripten 5.0.3 as a
+                               dynamically loadable module for Pyodide 314.0.x. Built from upstream commit
+                               6f2e40d10250a105b49966baa24d843711e61048 with the build and portability
+                               patches published at https://github.com/luzechao/browser-energy-simulation
+                               (patches/energyplus and patches/energyplus-pyodide). None of the patches
+                               changes simulation algorithms.
+  assets/pyenergyplus/         The Python API distributed with EnergyPlus version 26.1.0 software, with one
+                               line added so it can locate the module under Pyodide.
+
+EnergyPlus is Copyright (c) 1996-present, The Board of Trustees of the University of Illinois, The Regents
+of the University of California, through Lawrence Berkeley National Laboratory (subject to receipt of any
+required approvals from the U.S. Dept. of Energy), Oak Ridge National Laboratory, managed by UT-Battelle,
+Alliance for Energy Innovation, LLC, and other contributors. All rights reserved.
+
+The complete EnergyPlus license, reproduced verbatim, is in LICENSE-EnergyPlus.txt. Redistribution of the
+files above is subject to its conditions.
+
+The WebAssembly module also contains the third-party libraries that EnergyPlus links statically and parts of
+the Emscripten and LLVM runtimes. Their copyright notices and licenses are reproduced in THIRD_PARTY_NOTICES.
+
+This package is not an official EnergyPlus release, and it is not endorsed or sponsored by the U.S. Department
+of Energy or any other EnergyPlus copyright holder. The name "EnergyPlus" is used here solely to identify the
+software this package bundles, as section (4) of the EnergyPlus license requires, and not as part of this
+package's name or branding.
+
+The remaining files -- dist/, bin/ and the TypeScript sources they are built from -- are licensed under the
+MIT License in the file LICENSE.

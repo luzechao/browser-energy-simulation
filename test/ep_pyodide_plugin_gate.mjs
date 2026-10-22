@@ -15,7 +15,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
-import { installEnergyPlus, runEnergyPlus } from '../src/pyodide-energyplus.mjs';
+import { installEnergyPlus, runEnergyPlus } from '../packages/sim-engine-wasm/dist/index.js';
 import { compareESO, runWasm } from './lib/ep_gate_common.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -32,7 +32,7 @@ const SLACK_C = 0.05;
 const log = [];
 const fail = (msg, run) => {
   console.error(`FAIL: ${msg}`);
-  if (run) console.error((run.readOutput('eplusout.err') || '').split('\n').slice(-40).join('\n'));
+  if (run) console.error((run.readText('eplusout.err') || '').split('\n').slice(-40).join('\n'));
   console.error(log.slice(-20).join('\n'));
   process.exit(1);
 };
@@ -40,7 +40,7 @@ const fail = (msg, run) => {
 function simulate(pyodide, label, request) {
   const t0 = performance.now();
   const run = runEnergyPlus(pyodide, request);
-  const end = (run.readOutput('eplusout.end') || '').trim();
+  const end = (run.readText('eplusout.end') || '').trim();
   console.log(`[${label}] exit ${run.exitCode}; ${end || 'no eplusout.end'}; ${((performance.now() - t0) / 1000).toFixed(2)} s`);
   if (run.exitCode !== 0 || !/Completed Successfully.* 0 Severe/.test(end)) fail(`${label}: EnergyPlus did not complete`, run);
   return run;
@@ -100,7 +100,7 @@ const runA = simulate(pyodide, 'A stock plugin', {
   epw: fs.readFileSync(chicago),
   files: { [PLUGIN_MODULE]: fs.readFileSync(path.join(testfiles, PLUGIN_MODULE)) },
 });
-const seriesA = pluginSeries(runA.readOutput('eplusout.eso'), runA);
+const seriesA = pluginSeries(runA.readText('eplusout.eso'), runA);
 let widest = 0;
 for (const { avg, zones, stamp } of seriesA) {
   if (avg === undefined) fail(`plugin average missing at ${stamp}`, runA);
@@ -134,7 +134,7 @@ _m = sys.modules.get("${path.basename(PLUGIN_MODULE, '.py')}")
 getattr(getattr(_m, "np", None), "__version__", None)
 `);
   if (!pluginNumpy) fail('run B did not execute the numpy plugin module', runB);
-  const seriesB = pluginSeries(runB.readOutput('eplusout.eso'), runB);
+  const seriesB = pluginSeries(runB.readText('eplusout.eso'), runB);
   if (seriesB.length !== seriesA.length) fail(`run B reported ${seriesB.length} timesteps, run A ${seriesA.length}`, runB);
   let maxRel = 0;
   seriesA.forEach((a, k) => {
@@ -152,7 +152,7 @@ getattr(getattr(_m, "np", None), "__version__", None)
     epw: fs.readFileSync(chicago),
     files: { [PLUGIN_MODULE]: fs.readFileSync(path.join(root, 'test/fixtures/PythonPluginCustomOutputVariable_raises.py')) },
   });
-  const err = runD.readOutput('eplusout.err') || '';
+  const err = runD.readText('eplusout.err') || '';
   if (runD.exitCode === 0) fail('raising plugin: EnergyPlus reported success', runD);
   if (!err.includes('Fatal') || !err.includes('deliberate failure from test fixture') || !err.includes('Python traceback')) {
     fail('raising plugin: eplusout.err lacks the fatal error and Python traceback', runD);
@@ -168,7 +168,7 @@ if (!fs.existsSync(baselineJs)) {
   const idfC = path.join(root, 'energyplus-src/testfiles/1ZoneUncontrolled.idf');
   const runC = simulate(pyodide, 'C 1ZoneUncontrolled', { idf: fs.readFileSync(idfC), epw: fs.readFileSync(chicago) });
   const baseline = await runWasm(idfC, chicago);
-  const cmp = compareESO(baseline.eso, runC.readOutput('eplusout.eso'));
+  const cmp = compareESO(baseline.eso, runC.readText('eplusout.eso'));
   if (!(cmp.maxRel <= 1e-6)) fail(`ESO differs from baseline wasm: max rel ${cmp.maxRel} ${JSON.stringify(cmp.worst[0])}`, runC);
   console.log(`PASS C: ESO matches baseline wasm (max rel ${cmp.maxRel.toExponential(2)}, ${cmp.nDiff} differing values)`);
 }
