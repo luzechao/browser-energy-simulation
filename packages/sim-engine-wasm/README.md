@@ -1,11 +1,11 @@
 # @luzechao/sim-engine-wasm
 
-EnergyPlus version 26.1.0 software compiled to WebAssembly, running inside [Pyodide](https://pyodide.org), with
+EnergyPlus version 26.2.0 software compiled to WebAssembly, running inside [Pyodide](https://pyodide.org), with
 **PythonPlugin** support. `PythonPlugin:Instance` classes run in Pyodide's interpreter and can import Pyodide
 packages such as numpy. Everything runs client-side; no server is involved.
 
-**The package version is the EnergyPlus version it bundles.** Models must be IDF/epJSON version 26.1. Rebuilds
-of the same EnergyPlus release use the patch number (26.1.1, 26.1.2, ...).
+**The package version is the EnergyPlus version it bundles.** Models must be IDF/epJSON version 26.2. Rebuilds
+of the same EnergyPlus release use the patch number (26.2.1, 26.2.2, ...).
 
 ## Install
 
@@ -16,7 +16,7 @@ npm install @luzechao/sim-engine-wasm pyodide@314.0.7
 Until the package is on the npm registry, install the CI-built tarball from the GitHub Release instead:
 
 ```sh
-npm install https://github.com/luzechao/browser-energy-simulation/releases/download/sim-engine-wasm-v26.1.0/luzechao-sim-engine-wasm-26.1.0.tgz pyodide@314.0.7
+npm install https://github.com/luzechao/browser-energy-simulation/releases/download/sim-engine-wasm-v26.2.0/luzechao-sim-engine-wasm-26.2.0.tgz pyodide@314.0.7
 ```
 
 `pyodide` is a peer dependency, and any 314.0.x works. The engine is a Pyodide side module, so it only loads into

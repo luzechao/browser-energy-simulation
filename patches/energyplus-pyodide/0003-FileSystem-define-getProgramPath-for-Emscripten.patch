@@ -12,15 +12,15 @@ diff --git a/src/EnergyPlus/FileSystem.cc b/src/EnergyPlus/FileSystem.cc
 index 8b74c53..910bdfb 100644
 --- a/src/EnergyPlus/FileSystem.cc
 +++ b/src/EnergyPlus/FileSystem.cc
-@@ -49,6 +49,7 @@
+@@ -56,6 +56,7 @@
  #include <cerrno>
  #include <cstdio>
  #include <cstdlib>
 +#include <cstring>
+ #include <format>
  #include <fstream>
  #include <iostream>
- #include <sys/stat.h>
-@@ -222,6 +223,9 @@ namespace FileSystem {
+@@ -224,6 +225,9 @@ namespace FileSystem {
          }
  #elif _WIN32
          GetModuleFileName(NULL, executableRelativePath, sizeof(executableRelativePath));

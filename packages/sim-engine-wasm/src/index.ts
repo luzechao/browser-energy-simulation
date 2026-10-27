@@ -1,5 +1,5 @@
 /**
- * EnergyPlus version 26.1.0 software as a Pyodide side module, with PythonPlugin support.
+ * EnergyPlus version 26.2.0 software as a Pyodide side module, with PythonPlugin support.
  *
  * `libenergyplusapi.so` is loaded into a running Pyodide and driven through the stock `pyenergyplus` API, so
  * `PythonPlugin:Instance` classes execute in Pyodide's own interpreter and can import its packages (numpy, ...).
@@ -8,7 +8,7 @@
 import type { PyodideAPI } from 'pyodide'
 
 /** EnergyPlus release compiled into the bundled side module. */
-export const ENERGYPLUS_VERSION = '26.1.0'
+export const ENERGYPLUS_VERSION = '26.2.0'
 /** Pyodide release the side module was built against. Any 314.0.x shares its ABI (pyemscripten_2026_0). */
 export const PYODIDE_VERSION = '314.0.7'
 /** Where Pyodide package wheels (numpy, ...) are served for this Pyodide release. */

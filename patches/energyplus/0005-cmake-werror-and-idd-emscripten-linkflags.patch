@@ -38,32 +38,22 @@ Apply with (-p1, from the pristine energyplus-src/ tree root):
 
 --- a/cmake/CompilerFlags.cmake
 +++ b/cmake/CompilerFlags.cmake
-@@ -93,7 +93,10 @@
+@@ -97,7 +97,10 @@
  
    # COMPILER FLAGS
    target_compile_options(project_options INTERFACE -pipe) # Faster compiler processing
--  target_compile_options(project_options INTERFACE -Werror) # Compiler Driven Development
+-  target_compile_options(project_warnings INTERFACE -Werror) # Compiler Driven Development
 +  # -Werror removed for the radiance-web vendored build: we consume E+ on compilers
 +  # (gcc 15 / emscripten clang 23) far newer than upstream CI pins; new-warning
-+  # promotions in third_party (fmt, btwxt, libtk205) are false positives, not defects.
-+  # target_compile_options(project_options INTERFACE -Werror) # Compiler Driven Development
++  # promotions are false positives, not defects.
++  # target_compile_options(project_warnings INTERFACE -Werror) # Compiler Driven Development
    target_compile_options(project_warnings INTERFACE -Wpedantic)
    # Turn on warnings about constructs/situations that may be non-portable or outside of the standard
    target_compile_options(project_warnings INTERFACE -Wall) # Turn on warnings
-@@ -120,6 +123,9 @@
-     # depending on the level of overflow check selected, the stringop-overflow can also emit false positives
-     # https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wstringop-overflow
-     target_compile_options(project_warnings INTERFACE -Wno-stringop-overflow)
-+    # GCC 15 emits a -Wrestrict false positive in fmt 8's write_float when inlined
-+    # through std::uninitialized_copy (same family as the false positives above)
-+    target_compile_options(project_warnings INTERFACE -Wno-restrict)
-     # for RelWithDebInfo builds, lets turn OFF NDEBUG, which will re-enable assert statements
-     target_compile_options(project_options INTERFACE $<$<CONFIG:RelWithDebInfo>:-UNDEBUG>)
-   elseif("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang" OR "${CMAKE_CXX_COMPILER_ID}" STREQUAL "AppleClang")
 
 --- a/idd/CMakeLists.txt
 +++ b/idd/CMakeLists.txt
-@@ -20,6 +20,16 @@
+@@ -21,6 +21,16 @@
      ( ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang" OR "${CMAKE_CXX_COMPILER_ID}" STREQUAL "AppleClang") AND (CMAKE_CXX_COMPILER_VERSION VERSION_LESS 9.0)))
    target_link_libraries(generate_embeddable_epJSON_schema PRIVATE stdc++fs)
  endif()

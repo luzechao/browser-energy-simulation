@@ -23,7 +23,7 @@ test('parseEndFile reads success and counts', () => {
 test('parseErrFile groups continuation lines and skips recurring summaries', () => {
   const messages = parseErrFile(
     [
-      'Program Version,EnergyPlus, Version 26.1.0',
+      'Program Version,EnergyPlus, Version 26.2.0',
       '   ** Warning ** Pump power is 0',
       '   **   ~~~   ** for pump=SHWSYS1 PUMP',
       '   ** Severe  ** Node X connects to no component',

@@ -2,9 +2,9 @@
 // ones complete. The examples come from energyplus-pyodide/testfiles with their plugin .py files; all use the
 // bundled Chicago weather (upstream pairs several with other locations, so location warnings are expected).
 //
-// PythonPluginTestMathAndKill is registered upstream with EXPECT_FATAL, but at v26.1.0 it never reaches its plugin:
+// PythonPluginTestMathAndKill is registered upstream with EXPECT_FATAL, but at v26.2.0 it never reaches its plugin:
 // its zone splitter outlets bypass the air terminals ("connects to no component"; the baseline build without Python
-// fails identically), and its psychrometric test calls specific_heat(state, w, T) against the 26.1 signature
+// fails identically), and its psychrometric test calls specific_heat(state, w, T) against the 26.2 signature
 // specific_heat(state, w). A corrected variant ("TestMathAndKill (fixed)") is therefore run as well; it must pass
 // the plugin's trend, curve/table, psychrometric and glycol checks and stop through the plugin's own abort.
 //

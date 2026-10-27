@@ -94,7 +94,7 @@ jobs:
         run: |
           tarball="$(ls ./*.tgz)"
           sha="$(sha256sum "$tarball" | cut -d' ' -f1)"
-          notes="EnergyPlus version 26.1.0 software as a Pyodide 314 side module, built from source by this workflow (run ${GITHUB_RUN_ID}, commit ${GITHUB_SHA}).
+          notes="EnergyPlus version 26.2.0 software as a Pyodide 314 side module, built from source by this workflow (run ${GITHUB_RUN_ID}, commit ${GITHUB_SHA}).
 
           Install: \`npm install https://github.com/${GITHUB_REPOSITORY}/releases/download/${GITHUB_REF_NAME}/$(basename "$tarball")\`
 

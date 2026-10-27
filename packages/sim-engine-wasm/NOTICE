@@ -3,15 +3,15 @@ NOTICE
 
 @luzechao/sim-engine-wasm
 
-This package bundles, in WebAssembly form, EnergyPlus version 26.1.0 software and files derived from it:
+This package bundles, in WebAssembly form, EnergyPlus version 26.2.0 software and files derived from it:
 
-  assets/libenergyplusapi.so   EnergyPlus version 26.1.0 software, compiled with Emscripten 5.0.3 as a
+  assets/libenergyplusapi.so   EnergyPlus version 26.2.0 software, compiled with Emscripten 5.0.3 as a
                                dynamically loadable module for Pyodide 314.0.x. Built from upstream commit
-                               6f2e40d10250a105b49966baa24d843711e61048 with the build and portability
+                               4bd7a1f26fb749a83257855aba6760e26c8a3c8f with the build and portability
                                patches published at https://github.com/luzechao/browser-energy-simulation
-                               (patches/energyplus and patches/energyplus-pyodide). None of the patches
+                               (patches/energyplus/0005 and patches/energyplus-pyodide). None of the patches
                                changes simulation algorithms.
-  assets/pyenergyplus/         The Python API distributed with EnergyPlus version 26.1.0 software, with one
+  assets/pyenergyplus/         The Python API distributed with EnergyPlus version 26.2.0 software, with one
                                line added so it can locate the module under Pyodide.
 
 EnergyPlus is Copyright (c) 1996-present, The Board of Trustees of the University of Illinois, The Regents

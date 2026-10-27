@@ -1,7 +1,7 @@
 {
   "name": "@luzechao/sim-engine-wasm",
-  "version": "26.1.0",
-  "description": "EnergyPlus version 26.1.0 software compiled to WebAssembly as a Pyodide side module, with PythonPlugin support: building energy simulation in the browser.",
+  "version": "26.2.0",
+  "description": "EnergyPlus version 26.2.0 software compiled to WebAssembly as a Pyodide side module, with PythonPlugin support: building energy simulation in the browser.",
   "type": "module",
   "exports": {
     ".": {

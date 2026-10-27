@@ -57,7 +57,6 @@ const NOTICES = [
   { name: 'SQLite', header: 'third_party/SQLite/sqlite3.c', from: /The author disclaims copyright/ },
   { name: 'Expat', files: ['third_party/Expat/COPYING'] },
   { name: 'RE2', files: ['third_party/re2/LICENSE'] },
-  { name: '{fmt}', files: ['third_party/fmt-8.0.1/LICENSE.rst'] },
   { name: 'JSON for Modern C++ (nlohmann/json)', files: ['third_party/libtk205/vendor/json/LICENSE.MIT'] },
   { name: 'CLI11', files: ['third_party/CLI/LICENSE'] },
   { name: 'Btwxt', files: ['third_party/btwxt/LICENSE'] },
@@ -73,12 +72,11 @@ const NOTICES = [
     note: 'SPLINTER source code is available at https://github.com/bgrimstad/splinter.' },
   { name: 'Windows-CalcEngine', files: ['third_party/Windows-CalcEngine/Legal.txt'] },
   { name: 'DElight', header: 'third_party/DElight/BGL.h' },
-  { name: 'BCVTB', header: 'third_party/BCVTB/utilSocket.c' },
+  { name: 'BCVTB', header: 'third_party/BCVTB/BCVTB/utilSocket.c' },
   { name: 'FMI / FMU parser', header: 'third_party/FMUParser/fmiFunctions.h' },
-  { name: 'gsl-lite', header: 'third_party/GSL/span.h' },
-  { name: 'fast_float', header: 'third_party/fast_float/fast_float.h' },
-  { name: 'Milo Yip dtoa (RapidJSON)', header: 'third_party/milo/biginteger.h' },
-  { name: 'Alphanum (doj)', header: 'third_party/doj/alphanum.hpp' },
+  { name: 'fast_float', header: 'third_party/fast_float/fast_float/fast_float.h' },
+  { name: 'Milo Yip dtoa (RapidJSON)', header: 'third_party/milo/milo/biginteger.h' },
+  { name: 'Alphanum (doj)', header: 'third_party/nlohmann/doj/alphanum.hpp' },
   { name: 'valijson', files: ['pkg:scripts/licenses/valijson-LICENSE'],
     note: 'The vendored copy carries no license file; this is the upstream LICENSE (https://github.com/tristanpenman/valijson).' },
   { name: 'zlib', header: 'third_party/zlib/zlib.h' },
@@ -125,7 +123,7 @@ function licenseHeader(file, from) {
 
 const rule = '-'.repeat(78)
 const sections = [
-  `THIRD-PARTY SOFTWARE NOTICES\n\nlibenergyplusapi.so contains EnergyPlus version 26.1.0 software (see LICENSE-EnergyPlus.txt) and the\nthird-party libraries EnergyPlus links statically, listed below with the license text from their source.`,
+  `THIRD-PARTY SOFTWARE NOTICES\n\nlibenergyplusapi.so contains EnergyPlus version 26.2.0 software (see LICENSE-EnergyPlus.txt) and the\nthird-party libraries EnergyPlus links statically, listed below with the license text from their source.`,
 ]
 for (const entry of NOTICES) {
   let body

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # configure-ep-pyodide.sh
 #
-# Builds EnergyPlus v26.1.0 with PythonPlugin support as a Pyodide side module:
+# Builds EnergyPlus v26.2.0 with PythonPlugin support as a Pyodide side module:
 #   build/pyodide-ep/Products/libenergyplusapi.so   (Emscripten SIDE_MODULE)
 #   build/pyodide-ep/Products/pyenergyplus/          (Python API, loads the .so via ctypes)
 #

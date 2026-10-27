@@ -2,7 +2,7 @@
 # setup-pyodide-toolchain.sh
 #
 # Fetches everything scripts/configure-ep-pyodide.sh needs. Each step is skipped if already done.
-#   energyplus-pyodide/   EnergyPlus 6f2e40d102 (v26.1.0) + patches/energyplus/* + patches/energyplus-pyodide/*
+#   energyplus-pyodide/   EnergyPlus 4bd7a1f26f (v26.2.0) + patches/energyplus/* + patches/energyplus-pyodide/*
 #   emsdk-pyodide/        emsdk 5.0.3 (Pyodide 314.0.7's Emscripten) + Pyodide's emsdk patches
 #   third_party/pyodide/  pyodide-core-314.0.7 (runtime) and xbuildenv-314.0.7 (Python headers, emsdk patches)
 #
@@ -11,7 +11,7 @@
 set -euo pipefail
 
 REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-EP_COMMIT=6f2e40d10250a105b49966baa24d843711e61048
+EP_COMMIT=4bd7a1f26fb749a83257855aba6760e26c8a3c8f
 EP_REPO=https://github.com/NatLabRockies/EnergyPlus.git
 PYODIDE_VERSION=314.0.7
 PYODIDE_EMSCRIPTEN_VERSION=5.0.3
@@ -56,7 +56,7 @@ if [[ ! -d "${SOURCE_DIR}/.git" && ! -f "${SOURCE_DIR}/.git" ]]; then
   git -C "${SOURCE_DIR}" remote add origin "${EP_REPO}"
   git -C "${SOURCE_DIR}" fetch --depth 1 origin "${EP_COMMIT}"
   git -C "${SOURCE_DIR}" checkout -q FETCH_HEAD
-  for p in "${REPO_ROOT}"/patches/energyplus/*.patch "${REPO_ROOT}"/patches/energyplus-pyodide/*.patch; do
+  for p in "${REPO_ROOT}/patches/energyplus/0005-cmake-werror-and-idd-emscripten-linkflags.patch" "${REPO_ROOT}"/patches/energyplus-pyodide/*.patch; do
     git -C "${SOURCE_DIR}" apply "${p}"
     echo "applied $(basename "${p}")"
   done

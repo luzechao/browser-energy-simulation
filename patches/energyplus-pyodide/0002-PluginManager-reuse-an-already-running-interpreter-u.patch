@@ -6,28 +6,28 @@ Subject: [PATCH 2/4] PluginManager: reuse an already running interpreter under
 
 Inside Pyodide the interpreter is live before EnergyPlus loads. Py_InitializeFromConfig would reconfigure it and replace sys.path with python_lib, so return early from initPython when Py_IsInitialized().
 ---
- src/EnergyPlus/PluginManager.cc | 8 ++++++++
+ src/EnergyPlus/PythonHelpers.cc | 8 ++++++++
  1 file changed, 8 insertions(+)
 
-diff --git a/src/EnergyPlus/PluginManager.cc b/src/EnergyPlus/PluginManager.cc
-index 393b348..c2286cd 100644
---- a/src/EnergyPlus/PluginManager.cc
-+++ b/src/EnergyPlus/PluginManager.cc
-@@ -386,6 +386,14 @@ void PluginManager::setupOutputVariables([[maybe_unused]] EnergyPlusData &state)
- #if LINK_WITH_PYTHON
- void initPython(EnergyPlusData &state, fs::path const &pathToPythonPackages)
- {
-+#ifdef __EMSCRIPTEN__
-+    // In the browser, EnergyPlus is a side module loaded into an interpreter that is already running (Pyodide).
-+    // Re-initializing from config would reconfigure that live interpreter and replace its sys.path with python_lib.
-+    if (Py_IsInitialized() != 0) {
-+        return;
-+    }
-+#endif
-+
-     PyStatus status;
+diff --git a/src/EnergyPlus/PythonHelpers.cc b/src/EnergyPlus/PythonHelpers.cc
+index 8438d58..0a8598a 100644
+--- a/src/EnergyPlus/PythonHelpers.cc
++++ b/src/EnergyPlus/PythonHelpers.cc
+@@ -105,6 +105,14 @@ namespace PythonHelpers {
  
-     // first pre-config Python so that it can speak UTF-8
+     void initPython(EnergyPlus::EnergyPlusData &state, fs::path const &programDir)
+     {
++#    ifdef __EMSCRIPTEN__
++        // In the browser, EnergyPlus is a side module loaded into an interpreter that is already running (Pyodide).
++        // Re-initializing from config would reconfigure that live interpreter and replace its sys.path with python_lib.
++        if (Py_IsInitialized() != 0) {
++            return;
++        }
++#    endif
++
+         PyStatus status;
+ 
+         // first pre-config Python so that it can speak UTF-8
 -- 
 2.54.0 (Apple Git-157)
 

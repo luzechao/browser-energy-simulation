@@ -1,6 +1,6 @@
 # PythonPlugin build: EnergyPlus inside Pyodide
 
-This fork adds a second WebAssembly build of EnergyPlus v26.1.0 that supports `PythonPlugin:*` objects in the
+This fork adds a second WebAssembly build of EnergyPlus v26.2.0 that supports `PythonPlugin:*` objects in the
 browser. The original build (`scripts/configure-ep-wasm.sh`, `build/wasm-ep/`) is unchanged and still has no Python.
 
 ## How it works
@@ -27,13 +27,13 @@ Pyodide (main module: CPython, libc, libc++, ctypes, numpy, ...)
 
 ## EnergyPlus changes (`patches/energyplus-pyodide/`)
 
-These apply on top of the five toolchain patches in `patches/energyplus/`. All are Emscripten-only, and none of
-them touches simulation physics.
+These apply on top of `patches/energyplus/0005` (patches `0001–0004` from the v26.1.0 series were resolved
+upstream in v26.2.0). All are Emscripten-only, and none of them touches simulation physics.
 
 | Patch | Change |
 | --- | --- |
-| 0001 | `src/EnergyPlus/CMakeLists.txt`: new `energyplusapi_pyodide` target that links the static `energyplusapi` archive whole into `libenergyplusapi.so` with `-sSIDE_MODULE=1`. It defines `energyplusapi_EXPORTS` so `ENERGYPLUSLIB_API` keeps the C API visible under `-fvisibility=hidden`. It also skips copying the host Python standard library. |
-| 0002 | `PluginManager.cc`: `initPython` returns early if the interpreter is already running. Otherwise `Py_InitializeFromConfig` would reconfigure Pyodide and replace `sys.path` with `python_lib`. |
+| 0001 | `CMakeLists.txt`, `src/EnergyPlus/CMakeLists.txt`: new `energyplusapi_pyodide` target that links the static `energyplusapi` archive whole into `libenergyplusapi.so` with `-sSIDE_MODULE=1`. It defines `energyplusapi_EXPORTS` so `ENERGYPLUSLIB_API` keeps the C API visible under `-fvisibility=hidden`. It also skips copying the host Python standard library and searches only target `Development` headers under Emscripten. |
+| 0002 | `PythonHelpers.cc`: `initPython` returns early if the interpreter is already running. Otherwise `Py_InitializeFromConfig` would reconfigure Pyodide and replace `sys.path` with `python_lib`. |
 | 0003 | `FileSystem.cc`: `getProgramPath()` had no Emscripten branch and returned an uninitialized buffer. It now returns `/energyplus`. |
 | 0004 | `api/api.py`: `api_path()` returns `libenergyplusapi.so` when `sys.platform == "emscripten"`. |
 
@@ -79,10 +79,10 @@ The gate, the sweep and the browser demo use the package's built `dist/`, so bui
 - **C.** `1ZoneUncontrolled` without plugins: the ESO is identical to the baseline `build/wasm-ep` binary (0 values
   differ). The baseline is the build validated against native EnergyPlus in this repository.
 
-`ep_pyodide_plugin_sweep.mjs` result: all 23 upstream examples behave as expected, plus one corrected variant:
+`ep_pyodide_plugin_sweep.mjs` result: all 24 upstream examples behave as expected, plus one corrected variant:
 
-- 22 complete with 0 severe errors.
-- `PythonPluginTestMathAndKill` is `EXPECT_FATAL` upstream. At v26.1.0 it stops on wiring errors in its own IDF
+- 23 complete with 0 severe errors.
+- `PythonPluginTestMathAndKill` is `EXPECT_FATAL` upstream. At v26.2.0 it stops on wiring errors in its own IDF
   before the plugin runs; the plugin-free baseline build fails identically.
 - A corrected variant fixes the IDF wiring and an out-of-date `specific_heat` call in the upstream plugin. It passes
   the plugin's trend, curve/table, psychrometric and glycol checks, and stops through the plugin's own abort.
@@ -106,7 +106,7 @@ From your own code, use the npm package `@luzechao/sim-engine-wasm`; its
 ## npm package and releases
 
 [packages/sim-engine-wasm](packages/sim-engine-wasm) is published to npm as `@luzechao/sim-engine-wasm`. Its
-version is the EnergyPlus version (`26.1.0`; rebuilds bump the patch number). `npm run stage` copies the built
+version is the EnergyPlus version (`26.2.0`; rebuilds bump the patch number). `npm run stage` copies the built
 `libenergyplusapi.so` and `pyenergyplus/` into `assets/`, and writes `LICENSE-EnergyPlus.txt` and
 `THIRD_PARTY_NOTICES`. The notices are generated from the license files and headers of the libraries compiled
 into the module.
@@ -130,18 +130,18 @@ using either an `NPM_TOKEN` secret or npm trusted publishing.
   shading, `ExternalInterface`, and the Fortran preprocessors (ExpandObjects, Slab, Basement, EPMacro). These are
   the same gaps as the baseline build.
 - **Memory.** The simulation shares Pyodide's heap, which can grow to 4 GB.
-- **Version string.** `eplusout.err` shows a local commit hash after `26.1.0-`, because the patches are committed
-  on top of `6f2e40d102`.
+- **Version string.** `eplusout.err` shows a local commit hash after `26.2.0-`, because the patches are committed
+  on top of `4bd7a1f26f`.
 
 ## Provenance of the tested build
 
 | Item | Value |
 | --- | --- |
-| EnergyPlus | `6f2e40d10250a105b49966baa24d843711e61048` + `patches/energyplus/0001–0005` + `patches/energyplus-pyodide/0001–0004` |
+| EnergyPlus | `4bd7a1f26fb749a83257855aba6760e26c8a3c8f` + `patches/energyplus/0005` + `patches/energyplus-pyodide/0001–0004` |
 | Pyodide | 314.0.7 (`pyodide-core`, `xbuildenv`), CPython 3.14.2, ABI `pyemscripten_2026_0` |
 | Emscripten | 5.0.3 (clang 23.0.0git `e5927fecf8a6`) + Pyodide's five emsdk patches |
 | Host | macOS 26.7.1 arm64 (Apple M4 Pro), CMake 4.4.4, Ninja 1.13.2, Python 3.14.8 |
-| `libenergyplusapi.so` | 32,954,278 bytes, SHA-256 `532da382f66f4e2b07ae3faa704f66f7abc79b82926871e4dc78d000c87c1807` |
+| `libenergyplusapi.so` | 41,528,283 bytes, SHA-256 `32fde92f1b7c239c89bb5179157a114b61ade6f8bc8dbc40e50edb60319e70cc` |
 | Baseline `energyplus.js-26.1.wasm` rebuilt on the same host with emsdk 6.0.0 | SHA-256 `dc9e06d2be13851cf938af21b58164ccc4500e7e36449eca5e0a0c44985e3b7e` |
 
 Binary hashes depend on the host and toolchain. Rely on the gates above, not on matching hashes.
